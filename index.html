@@ -1,62 +1,303 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projeto Industrial</title>
-<meta name="description" content="Ferramentas e catálogos gratuitos para quem estuda e trabalha na indústria: cursos, vagas, cálculos de processo e hidráulica.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Projeto Industrial">
-<meta property="og:description" content="Ferramentas e catálogos gratuitos para quem estuda e trabalha na indústria.">
-<meta property="og:url" content="https://projetoindustrial.github.io/">
-<meta property="og:image" content="https://projetoindustrial.github.io/og.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#12355b">
-<link rel="icon" href="./favicon.svg" type="image/svg+xml">
-<style>
-:root{--bg:#f6f8fb;--card:#fff;--tx:#14202e;--mut:#51606f;--bd:#d9e1ea;--ac:#12355b;--hl:#b87c00}
-:root[data-theme="dark"]{--bg:#0f1720;--card:#17222e;--tx:#e8eef5;--mut:#9fb0c1;--bd:#2a3a4a;--ac:#8fc0f0;--hl:#f2a900;color-scheme:dark}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.w{max-width:960px;margin:0 auto;padding:32px 16px 48px}
-h1{font-size:clamp(1.8rem,6vw,2.6rem);margin:0 0 8px;color:var(--ac)}
-.lead{color:var(--mut);margin:0 0 28px;max-width:60ch}
-.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-a.c{display:block;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:18px;color:inherit;text-decoration:none}
-a.c:hover,a.c:focus-visible{border-color:var(--ac);outline:2px solid var(--ac);outline-offset:1px}
-.c h2{margin:0 0 6px;font-size:1.15rem;color:var(--ac)}
-.c p{margin:0 0 10px;color:var(--mut);font-size:.95rem}
-.t{font-size:.8rem;color:var(--hl);font-weight:600}
-.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-#tema{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:999px;padding:8px 14px;font:inherit;font-size:.9rem;cursor:pointer;white-space:nowrap}
-#tema:hover,#tema:focus-visible{border-color:var(--ac);outline:2px solid var(--ac);outline-offset:1px}
-footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--bd);color:var(--mut);font-size:.88rem}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projeto Industrial — Ferramentas e catálogos gratuitos para a indústria brasileira: cursos, vagas, cálculos de processo e hidráulica.">
+  <title>Projeto Industrial</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<main class="w">
-<div class="top"><h1>Projeto Industrial</h1><button id="tema" type="button" aria-label="Alternar tema claro e escuro">Tema escuro</button></div>
-<p class="lead">Ferramentas e catálogos gratuitos para quem estuda e trabalha na indústria brasileira: cursos, vagas e cálculos de processo e hidráulica.</p>
-<div class="g">
-<a class="c" href="https://projetoindustrial.github.io/industriaedu/"><h2>IndústriaEDU</h2><p>Portal de educação e mercado de trabalho para a indústria: fontes gratuitas curadas, trilhas de carreira, NR, CBO e CNCT.</p><span class="t">Portal</span></a>
-<a class="c" href="https://projetoindustrial.github.io/catalogo-cursos-gratuitos/"><h2>Catálogo de cursos gratuitos</h2><p>Mais de 13 mil cursos gratuitos e abertos, em 6 blocos e 62 trilhas, com busca em todos os blocos.</p><span class="t">Catálogo</span></a>
-<a class="c" href="https://projetoindustrial.github.io/vagas/"><h2>Painel de Vagas</h2><p>Vagas abertas e canais de candidatura de empresas de petroquímica, química e óleo e gás. Instalável no celular.</p><span class="t">PWA</span></a>
-<a class="c" href="https://projetoindustrial.github.io/caderno/"><h2>Caderno</h2><p>61 módulos de cálculo de processo e hidráulica industrial, que funcionam offline. Uso didático.</p><span class="t">PWA · offline</span></a>
-<a class="c" href="https://projetoindustrial.github.io/planta-virtual-site/"><h2>Planta Virtual</h2><p>Simulação de plantas de processo como um grafo de equipamentos conectados, com diagramas e links para as ferramentas.</p><span class="t">Apresentação</span></a>
-<a class="c" href="https://projetoindustrial.github.io/editor-fluxograma/"><h2>Editor de Fluxograma</h2><p>Desenhe fluxogramas de processo no navegador: arraste ativos, conecte as portas e exporte em JSON.</p><span class="t">Ferramenta</span></a>
-<a class="c" href="https://projetoindustrial.github.io/fontes-industriais/"><h2>Fontes de dados industriais</h2><p>446 fontes abertas de dados para a indústria, com a licença de cada uma resumida e busca por tema.</p><span class="t">Catálogo</span></a>
-<a class="c" href="https://projetoindustrial.github.io/manutencao/"><h2>Manutenção</h2><p>Site sobre manutenção e confiabilidade, ainda em construção.</p><span class="t">Em construção</span></a>
-</div>
-<footer>Projetos independentes, sem vínculo com as empresas e instituições citadas. As ferramentas de cálculo são didáticas e não substituem a responsabilidade técnica de profissional habilitado. Dados de vagas e cursos podem estar desatualizados: confirme sempre na fonte oficial.</footer>
-</main>
-<script>
-(function(){
-var r=document.documentElement,b=document.getElementById("tema"),t="light";
-try{t=localStorage.getItem("tema")==="dark"?"dark":"light"}catch(e){}
-function ap(x){r.setAttribute("data-theme",x);b.textContent=x==="dark"?"Tema claro":"Tema escuro";var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=x==="dark"?"#0f1720":"#12355b"}
-ap(t);
-b.addEventListener("click",function(){t=t==="dark"?"light":"dark";ap(t);try{localStorage.setItem("tema",t)}catch(e){}});
-})();
-</script>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="/" class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="#0EA5E9"/>
+          <path d="M8 12h16v2H8v-2zm0 4h12v2H8v-2zm0 4h16v2H8v-2z" fill="white"/>
+        </svg>
+        <span>Projeto Industrial</span>
+      </a>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Fechar menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item active">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Início
+      </a>
+      <a href="index.html#cursos" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        Cursos
+      </a>
+      <a href="carreiras.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        Carreiras & Bolsas
+      </a>
+      <a href="index.html#caderno" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Caderno
+      </a>
+      <a href="recursos.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        Recursos O&G
+      </a>
+      <a href="vagas-comunidades.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Vagas & Comunidades
+      </a>
+      <a href="manutencao.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Manutenção & PCM
+      </a>
+      <a href="hse.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        HSE & Segurança
+      </a>
+      <a href="dados.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        Dados & Regulação
+      </a>
+      <a href="normas.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Normas & Certificação
+      </a>
+      <a href="subsea.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Subsea & Integridade
+      </a>
+      <a href="portos.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Portos & Logística
+      </a>
+      <a href="petroquimica.html" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6v4H9zM9 11h6v10H9zM5 7h14v4H5z"/></svg>
+        Petroquímica
+      </a>
+      <a href="index.html#fluxograma" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Fluxograma
+      </a>
+      <a href="index.html#industriaedu" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        IndústriaEDU
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Buscar no menu..." aria-label="Buscar no menu">
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay for mobile -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Main content -->
+  <div class="main-wrapper">
+    <!-- Top Header -->
+    <header class="top-header">
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+
+      <div class="search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" placeholder="Buscar cursos, vagas, ferramentas..." aria-label="Busca global">
+        <kbd>⌘ K</kbd>
+      </div>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main-content">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Centralize. Aprenda. <span>Evolua.</span></h1>
+          <p>Plataforma gratuita com ferramentas, conteúdos e oportunidades para quem constrói o futuro da indústria brasileira.</p>
+          <a href="#ferramentas" class="btn btn-primary">
+            Explorar plataforma
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Destaques -->
+      <section class="destaques">
+        <div class="destaque-card">
+          <div class="destaque-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div class="destaque-info">
+            <span class="destaque-label">Curso da semana</span>
+            <h3>Gestão da Manutenção Industrial</h3>
+            <p>40h · Certificado incluso</p>
+          </div>
+          <a href="#cursos" class="destaque-link">Ver curso →</a>
+        </div>
+
+        <div class="destaque-card">
+          <div class="destaque-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          </div>
+          <div class="destaque-info">
+            <span class="destaque-label">Vaga em evidência</span>
+            <h3>Engenheiro(a) de Produção</h3>
+            <p>São Paulo, SP · CLT · R$ 8.500</p>
+          </div>
+          <a href="carreiras.html" class="destaque-link">Ver vaga →</a>
+        </div>
+
+        <div class="destaque-card">
+          <div class="destaque-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <div class="destaque-info">
+            <span class="destaque-label">Ferramenta do mês</span>
+            <h3>Power BI para Industriais</h3>
+            <p>Análise de dados sem complicação</p>
+          </div>
+          <a href="#ferramentas" class="destaque-link">Acessar ferramenta →</a>
+        </div>
+      </section>
+
+      <!-- Ferramentas principais -->
+      <section class="ferramentas" id="ferramentas">
+        <div class="section-header">
+          <h2>Ferramentas principais</h2>
+          <a href="#" class="section-link">Ver todas as ferramentas →</a>
+        </div>
+
+        <div class="tools-grid">
+          <a href="#cursos" class="tool-card" id="cursos">
+            <div class="tool-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3>Cursos</h3>
+            <p>Catálogo completo de cursos gratuitos e pagos com foco industrial.</p>
+            <span class="tool-action">Acessar</span>
+          </a>
+
+          <a href="carreiras.html" class="tool-card" id="vagas">
+            <div class="tool-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </div>
+            <h3>Carreiras & Bolsas</h3>
+            <p>Portais de carreira, programas de capacitação e comunidades de vagas.</p>
+            <span class="tool-action">Acessar</span>
+          </a>
+
+          <a href="#caderno" class="tool-card" id="caderno">
+            <div class="tool-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
+            </div>
+            <h3>Caderno</h3>
+            <p>Seu espaço para anotações, resumos e acompanhamento de estudos.</p>
+            <span class="tool-action">Acessar</span>
+          </a>
+
+          <a href="#fluxograma" class="tool-card" id="fluxograma">
+            <div class="tool-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <h3>Fluxograma</h3>
+            <p>Crie, edite e compartilhe fluxogramas e diagramas de processo.</p>
+            <span class="tool-action">Acessar</span>
+          </a>
+
+          <a href="recursos.html" class="tool-card" id="dados">
+            <div class="tool-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3>Recursos O&G</h3>
+            <p>350 fontes, grupos, portais de carreira, dados e normas da indústria offshore.</p>
+            <span class="tool-action">Acessar</span>
+          </a>
+
+          <a href="#industriaedu" class="tool-card" id="industriaedu">
+            <div class="tool-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3>IndústriaEDU</h3>
+            <p>Conteúdos educativos, artigos e materiais para o desenvolvimento contínuo.</p>
+            <span class="tool-action">Acessar</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Atualizações recentes -->
+      <section class="atualizacoes">
+        <div class="section-header">
+          <h2>Atualizações recentes</h2>
+          <a href="#" class="section-link">Ver todas →</a>
+        </div>
+
+        <div class="updates-list">
+          <a href="#" class="update-item">
+            <div class="update-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="update-content">
+              <h4>Novo curso: Confiabilidade Industrial e Análise de Riscos</h4>
+              <span class="update-date">Publicado em 21/05/2025</span>
+            </div>
+            <span class="update-day">21/05</span>
+          </a>
+
+          <a href="#" class="update-item">
+            <div class="update-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </div>
+            <div class="update-content">
+              <h4>Abertas vagas para Engenharia de Manutenção no RJ e SP</h4>
+              <span class="update-date">Publicado em 20/05/2025</span>
+            </div>
+            <span class="update-day">20/05</span>
+          </a>
+
+          <a href="#" class="update-item">
+            <div class="update-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <div class="update-content">
+              <h4>Nova fonte de dados: Índice de Produção Industrial (IBGE)</h4>
+              <span class="update-date">Publicado em 19/05/2025</span>
+            </div>
+            <span class="update-day">19/05</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 Projeto Industrial. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+        <a href="#">GitHub</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -755,8 +755,19 @@ img {
 .nav-group[open] summary::after{transform:rotate(90deg)}
 .nav-soon,.tool-soon{opacity:.6;cursor:default}
 .badge-soon{margin-left:auto;font-size:.65rem;font-style:normal;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
-.hero{background:linear-gradient(90deg,var(--bg-secondary) 0%,rgba(11,15,25,.92) 48%,rgba(11,15,25,0) 82%),url('../img/hero-refinaria.svg') right bottom/auto 100% no-repeat,var(--bg-secondary);min-height:270px}
-[data-theme="light"] .hero{background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.94) 48%,rgba(255,255,255,0) 82%),url('../img/hero-refinaria.svg') right bottom/auto 100% no-repeat,#fff}
 .hero-content{max-width:560px}
-@media(max-width:768px){.hero{padding:32px 22px;background:linear-gradient(180deg,rgba(11,15,25,.95) 0%,rgba(11,15,25,.55) 100%),url('../img/hero-refinaria.svg') 75% bottom/auto 100% no-repeat}
-[data-theme="light"] .hero{background:linear-gradient(180deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.6) 100%),url('../img/hero-refinaria.svg') 75% bottom/auto 100% no-repeat}}
+
+/* === Hero com imagens alternando === */
+.hero{background:var(--bg-secondary);min-height:270px;position:relative;overflow:hidden;isolation:isolate}
+.hero-slides,.hero-slides span{position:absolute;inset:0}
+.hero-slides{z-index:-1}
+.hero-slides span{background-size:cover;background-position:center;opacity:0;animation:heroFade 21s infinite}
+.hero-slides span:nth-child(1){background-image:url('../img/hero-1.webp');animation-delay:0s}
+.hero-slides span:nth-child(2){background-image:url('../img/hero-2.webp');animation-delay:7s}
+.hero-slides span:nth-child(3){background-image:url('../img/hero-3.webp');animation-delay:14s}
+.hero-slides::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,10,20,.92) 0%,rgba(6,10,20,.7) 45%,rgba(6,10,20,.25) 100%)}
+@keyframes heroFade{0%{opacity:0}6%{opacity:1}33%{opacity:1}39%{opacity:0}100%{opacity:0}}
+.hero h1{color:#fff}.hero h1 span{color:#38bdf8}.hero p{color:rgba(255,255,255,.88)}
+.hero .btn-primary{color:#fff}
+@media(max-width:768px){.hero{padding:32px 22px}.hero-slides::after{background:linear-gradient(180deg,rgba(6,10,20,.88) 0%,rgba(6,10,20,.6) 100%)}}
+@media(prefers-reduced-motion:reduce){.hero-slides span{animation:none}.hero-slides span:nth-child(1){opacity:1}}

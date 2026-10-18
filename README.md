@@ -1,6 +1,6 @@
 # Projeto Industrial
 
-Página inicial dos projetos públicos: IndústriaEDU, Catálogo de cursos gratuitos, Painel de Vagas, Caderno, Editor de Fluxograma e Manutenção.
+Página inicial dos projetos públicos: IndústriaEDU, Catálogo de cursos gratuitos, Painel de Vagas, Caderno, Editor de Fluxograma, Fontes de dados industriais e Manutenção.
 
 **Acesse:** https://projetoindustrial.github.io/
 

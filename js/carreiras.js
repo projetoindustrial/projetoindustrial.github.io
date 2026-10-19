@@ -1,12 +1,10 @@
-// Carreiras & Bolsas — carrega portais e comunidades do JSON
+// Carreiras & Bolsas — carrega portais do JSON (comunidades: ver tema.html?t=vagas-comunidades)
 
 (function () {
   const portaisGrid = document.getElementById('portaisGrid');
-  const comunidadesGrid = document.getElementById('comunidadesGrid');
   const searchInput = document.getElementById('careerSearch');
 
   let allPortais = [];
-  let allComunidades = [];
 
   async function loadData() {
     try {
@@ -34,28 +32,11 @@
         );
       });
 
-      // Comunidades / grupos / canais de vagas
-      allComunidades = recursos.filter(r => {
-        const plat = (r.plataforma || '').toLowerCase();
-        const text = (
-          (r.categoria || '') + ' ' +
-          (r.tipo || '') + ' ' +
-          (r.observacoes || '') + ' ' +
-          (r.tags || []).join(' ')
-        ).toLowerCase();
-
-        const isCommunityPlatform = ['whatsapp', 'telegram', 'facebook', 'instagram', 'linkedin', 'discord'].some(p => plat.includes(p));
-        const isVagas = text.includes('vaga') || text.includes('emprego') || text.includes('recrut') || text.includes('grupo');
-
-        return isCommunityPlatform && isVagas;
-      });
 
       // Limit to avoid too many cards (keep most relevant)
       allPortais = allPortais.slice(0, 24);
-      allComunidades = allComunidades.slice(0, 18);
 
       renderPortais(allPortais);
-      renderComunidades(allComunidades);
     } catch (err) {
       console.error(err);
       if (portaisGrid) {
@@ -74,15 +55,6 @@
     portaisGrid.innerHTML = list.map(r => cardHtml(r)).join('');
   }
 
-  function renderComunidades(list) {
-    if (!comunidadesGrid) return;
-    if (list.length === 0) {
-      comunidadesGrid.innerHTML = `<div class="empty-state"><p>Nenhuma comunidade encontrada.</p></div>`;
-      return;
-    }
-
-    comunidadesGrid.innerHTML = list.map(r => cardHtml(r)).join('');
-  }
 
   function cardHtml(r) {
     const link = r.link && r.link.startsWith('http') ? r.link : '#';
@@ -120,7 +92,6 @@
     const q = (searchInput?.value || '').trim().toLowerCase();
     if (!q) {
       renderPortais(allPortais);
-      renderComunidades(allComunidades);
       return;
     }
 
@@ -133,7 +104,6 @@
     };
 
     renderPortais(allPortais.filter(match));
-    renderComunidades(allComunidades.filter(match));
   }
 
   function debounce(fn, ms) {

@@ -1,6 +1,41 @@
-// Página temática genérica — filtra recursos do JSON conforme data-tema da página
+// Página temática única (tema.html?t=<chave>) — filtra recursos do JSON conforme o tema
 
 (function () {
+  const TEMAS = {
+    "dados-regulacao": {
+      "titulo": "Dados & Regulação",
+      "descricao": "Dados abertos, estatísticas de produção, regulação, ANP, BSEE, BOEM e bases técnicas para análise e conformidade."
+    },
+    "hse-seguranca": {
+      "titulo": "HSE & Segurança",
+      "descricao": "Segurança do Trabalho, HSE, SMS, SESMT, normas de segurança e recursos para profissionais de saúde e segurança no setor."
+    },
+    "manutencao-pcm": {
+      "titulo": "Manutenção & PCM",
+      "descricao": "Recursos de Planejamento e Controle de Manutenção, confiabilidade, gestão de ativos e engenharia de manutenção industrial e offshore."
+    },
+    "normas-certificacao": {
+      "titulo": "Normas & Certificação",
+      "descricao": "Normas técnicas, regras de classificação, certificação, acreditação e padrões da indústria de óleo e gás."
+    },
+    "petroquimica": {
+      "titulo": "Petroquímica",
+      "descricao": "Polos petroquímicos, empresas do setor químico e recursos relacionados à cadeia petroquímica brasileira."
+    },
+    "portos-logistica": {
+      "titulo": "Portos & Logística",
+      "descricao": "Complexos portuários, terminais, logística offshore, cabotagem e operações aquaviárias."
+    },
+    "subsea-integridade": {
+      "titulo": "Subsea & Integridade",
+      "descricao": "Sistemas submarinos, integridade de ativos, inspeção, poços, risers, umbilicais e operações offshore."
+    },
+    "vagas-comunidades": {
+      "titulo": "Vagas & Comunidades",
+      "descricao": "Grupos, canais e páginas de divulgação de vagas e networking profissional em óleo e gás, offshore e indústrias relacionadas."
+    }
+  };
+
   const grid = document.getElementById('recursosGrid');
   const emptyState = document.getElementById('emptyState');
   const resultsCount = document.getElementById('resultsCount');
@@ -8,7 +43,24 @@
   const clearBtn = document.getElementById('clearFilters');
   const resetEmpty = document.getElementById('resetEmpty');
 
-  const tema = document.body.dataset.tema || 'todos';
+  const params = new URLSearchParams(location.search);
+  const tema = params.get('t') || document.body.dataset.tema || 'todos';
+  const info = TEMAS[tema];
+
+  function applyPageInfo() {
+    const titulo = info ? info.titulo : 'Tema não encontrado';
+    const el = (id) => document.getElementById(id);
+    document.title = titulo + ' — Projeto Industrial';
+    if (el('temaTitulo')) el('temaTitulo').textContent = titulo;
+    if (el('temaCrumb')) el('temaCrumb').textContent = titulo;
+    if (el('temaSubtitulo')) el('temaSubtitulo').textContent = info ? info.descricao : 'Escolha um tema no menu ou veja o catálogo completo.';
+    const md = document.querySelector('meta[name="description"]');
+    if (md && info) md.setAttribute('content', info.descricao);
+    document.querySelectorAll('.sidebar-nav a.nav-item').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === 'tema.html?t=' + tema);
+    });
+  }
+  applyPageInfo();
   let allRecursos = [];
   let filtered = [];
   let paginasTematicas = {};
@@ -31,6 +83,7 @@
 
   function matchesTema(recurso, temaKey) {
     if (temaKey === 'todos') return true;
+    if (!TEMAS[temaKey]) return false;
 
     // Match por plataforma em temas de comunidade
     if (temaKey === 'vagas-comunidades') {

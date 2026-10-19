@@ -9,14 +9,8 @@ Site estático (GitHub Pages) com layout híbrido + catálogo O&G Offshore.
 | `index.html` | Home (layout híbrido) |
 | `recursos.html` | Catálogo completo (350 recursos, busca e filtros) |
 | `carreiras.html` | Carreiras, bolsas e portais |
-| `vagas-comunidades.html` | Grupos e canais de vagas |
-| `manutencao.html` | Manutenção & PCM |
-| `hse.html` | HSE & Segurança |
-| `dados.html` | Dados & Regulação |
-| `normas.html` | Normas & Certificação |
-| `subsea.html` | Subsea & Integridade |
-| `portos.html` | Portos & Logística |
-| `petroquimica.html` | Petroquímica |
+| `tema.html?t=<chave>` | Página temática única (manutencao-pcm, hse-seguranca, dados-regulacao, normas-certificacao, subsea-integridade, portos-logistica, petroquimica, vagas-comunidades) |
+| `manutencao.html`, `hse.html`, `dados.html`, `normas.html`, `subsea.html`, `portos.html`, `petroquimica.html`, `vagas-comunidades.html` | Redirecionam para `tema.html?t=…` (mantêm meta/og para links antigos) |
 
 ## Estrutura
 
@@ -34,7 +28,7 @@ data/    recursos-og-offshore.json  (350 recursos)
 
 ## Atualizar o catálogo
 
-Substitua `data/recursos-og-offshore.json`. As subpáginas filtram sozinhas.
+Substitua `data/recursos-og-offshore.json`. As páginas de tema filtram sozinhas. Para um tema novo, adicione a chave em `paginas_tematicas` do JSON e em `TEMAS` no `js/tema.js`.
 
 ## Auditoria (18/10/2026)
 
@@ -44,3 +38,9 @@ Substitua `data/recursos-og-offshore.json`. As subpáginas filtram sozinhas.
 - JS com sintaxe OK
 - Filtros temáticos ajustados
 - Tema claro/escuro + menu mobile em todas as páginas
+
+## Ajuste (18/10/2026)
+
+- 8 páginas temáticas quase idênticas viraram `tema.html` (parâmetro `t`); as URLs antigas redirecionam.
+- Seção repetida de comunidades removida de `carreiras.html` (atalho para `tema.html?t=vagas-comunidades`).
+- Testado em jsdom: os cards de cada tema saem idênticos aos das páginas antigas.

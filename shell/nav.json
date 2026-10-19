@@ -1,0 +1,137 @@
+{
+ "version": 1,
+ "logo": {
+  "title": "PROJETO",
+  "sub": "INDUSTRIAL",
+  "href": "/"
+ },
+ "items": [
+  {
+   "id": "index",
+   "label": "Início",
+   "href": "/",
+   "icon": "<path d=\"M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/><path d=\"M9 22V12h6v10\"/>"
+  },
+  {
+   "id": "industriaedu",
+   "label": "IndústriaEDU",
+   "href": "/industriaedu/",
+   "icon": "<path d=\"M4 19.5A2.5 2.5 0 0 1 6.5 17H20\"/><path d=\"M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z\"/>"
+  },
+  {
+   "id": "catalogo-cursos-gratuitos",
+   "label": "Cursos",
+   "href": "/catalogo-cursos-gratuitos/",
+   "icon": "<path d=\"M22 10L12 5 2 10l10 5 10-5z\"/><path d=\"M6 12v5c3 2 9 2 12 0v-5\"/>"
+  },
+  {
+   "id": "portal-rede-federal",
+   "label": "Cursos da Rede Federal",
+   "href": "/portal-rede-federal/",
+   "icon": "<path d=\"M22 10L12 5 2 10l10 5 10-5z\"/><path d=\"M6 12v5c3 2 9 2 12 0v-5\"/>"
+  },
+  {
+   "id": "vagas",
+   "label": "Vagas",
+   "href": "/vagas/",
+   "icon": "<rect x=\"2\" y=\"7\" width=\"20\" height=\"14\" rx=\"2\"/><path d=\"M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2\"/>"
+  },
+  {
+   "id": "caderno",
+   "label": "Caderno",
+   "href": "/caderno/",
+   "icon": "<path d=\"M4 19.5A2.5 2.5 0 0 1 6.5 17H20\"/><path d=\"M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z\"/><path d=\"M8 7h8M8 11h8M8 15h5\"/>"
+  },
+  {
+   "id": "editor-fluxograma",
+   "label": "Fluxograma",
+   "href": "/editor-fluxograma/",
+   "icon": "<rect x=\"9\" y=\"3\" width=\"6\" height=\"5\" rx=\"1\"/><rect x=\"2\" y=\"16\" width=\"6\" height=\"5\" rx=\"1\"/><rect x=\"16\" y=\"16\" width=\"6\" height=\"5\" rx=\"1\"/><path d=\"M12 8v4M5 16v-4h14v4\"/>"
+  },
+  {
+   "id": "manutencao",
+   "label": "Manutenção",
+   "href": "/manutencao/",
+   "icon": "<path d=\"M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z\"/>"
+  },
+  {
+   "id": "fontes-industriais",
+   "label": "Fontes de dados",
+   "href": "/fontes-industriais/",
+   "icon": "<ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"/><path d=\"M21 12c0 1.66-4 3-9 3s-9-1.34-9-3\"/><path d=\"M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5\"/>"
+  },
+  {
+   "id": "planta-virtual-site",
+   "label": "Planta Virtual",
+   "href": "/planta-virtual-site/",
+   "icon": "<circle cx=\"6\" cy=\"6\" r=\"3\"/><circle cx=\"18\" cy=\"6\" r=\"3\"/><circle cx=\"12\" cy=\"18\" r=\"3\"/><path d=\"M8.5 7.5l2 8M15.5 7.5l-2 8M9 6h6\"/>"
+  }
+ ],
+ "groups": [
+  {
+   "label": "Óleo & Gás Offshore",
+   "items": [
+    {
+     "id": "recursos",
+     "label": "Recursos O&G",
+     "href": "/recursos.html",
+     "icon": "<ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"/><path d=\"M21 12c0 1.66-4 3-9 3s-9-1.34-9-3\"/><path d=\"M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5\"/>"
+    },
+    {
+     "id": "carreiras",
+     "label": "Carreiras & Bolsas",
+     "href": "/carreiras.html",
+     "icon": "<rect x=\"2\" y=\"7\" width=\"20\" height=\"14\" rx=\"2\"/><path d=\"M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2\"/>"
+    },
+    {
+     "id": "vagas-comunidades",
+     "label": "Vagas & Comunidades",
+     "href": "/tema.html?t=vagas-comunidades",
+     "icon": "<path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75\"/>"
+    },
+    {
+     "id": "manutencao-pcm",
+     "label": "Manutenção & PCM",
+     "href": "/tema.html?t=manutencao-pcm",
+     "icon": "<path d=\"M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z\"/>"
+    },
+    {
+     "id": "hse-seguranca",
+     "label": "HSE & Segurança",
+     "href": "/tema.html?t=hse-seguranca",
+     "icon": "<path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/>"
+    },
+    {
+     "id": "dados-regulacao",
+     "label": "Dados & Regulação",
+     "href": "/tema.html?t=dados-regulacao",
+     "icon": "<ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"/><path d=\"M21 12c0 1.66-4 3-9 3s-9-1.34-9-3\"/><path d=\"M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5\"/>"
+    },
+    {
+     "id": "normas-certificacao",
+     "label": "Normas & Certificação",
+     "href": "/tema.html?t=normas-certificacao",
+     "icon": "<path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><path d=\"M14 2v6h6\"/>"
+    },
+    {
+     "id": "subsea-integridade",
+     "label": "Subsea & Integridade",
+     "href": "/tema.html?t=subsea-integridade",
+     "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6v6l4 2\"/>"
+    },
+    {
+     "id": "portos-logistica",
+     "label": "Portos & Logística",
+     "href": "/tema.html?t=portos-logistica",
+     "icon": "<rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"/><path d=\"M16 8h4l3 3v5h-7z\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/>"
+    },
+    {
+     "id": "petroquimica",
+     "label": "Petroquímica",
+     "href": "/tema.html?t=petroquimica",
+     "icon": "<path d=\"M9 3h6v4H9zM9 11h6v10H9zM5 7h14v4H5z\"/>"
+    }
+   ]
+  }
+ ]
+}

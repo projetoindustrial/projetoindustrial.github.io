@@ -1,0 +1,83 @@
+/* Projeto Industrial — casca compartilhada (menu + barra). Tudo com prefixo pi-.
+   Não altera o CSS do site que a carrega, exceto o recuo lateral no modo "full". */
+.pi-root{
+  --pi-bg:#0F172A;--pi-bg2:#111827;--pi-card:#1E293B;--pi-bd:#1E293B;
+  --pi-tx:#F1F5F9;--pi-tx2:#94A3B8;--pi-mut:#64748B;
+  --pi-ac:#0EA5E9;--pi-soft:rgba(14,165,233,.15);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:14px;line-height:1.3;
+}
+.pi-root[data-pi-scheme="light"]{
+  --pi-bg:#FFFFFF;--pi-bg2:#FFFFFF;--pi-card:#F1F5F9;--pi-bd:#E2E8F0;
+  --pi-tx:#0F172A;--pi-tx2:#475569;--pi-mut:#64748B;--pi-ac:#0284C7;--pi-soft:rgba(2,132,199,.1);
+}
+.pi-root *,.pi-root *::before,.pi-root *::after{box-sizing:border-box}
+.pi-root a{text-decoration:none;color:inherit}
+.pi-root button{font:inherit;color:inherit;cursor:pointer}
+
+/* Medidas visíveis para a página inteira. --pi-offset = altura que a casca ocupa no topo;
+   cabeçalhos fixos/sticky do site devem usar top:var(--pi-offset,0px). */
+html.pi-ready{--pi-h:48px;--pi-w:248px;--pi-offset:0px}
+html.pi-mode-bar{--pi-offset:48px}
+@media (max-width:1099.98px){html.pi-full{--pi-offset:48px}}
+
+/* Barra superior (modo bar e full em telas estreitas) */
+.pi-bar{position:fixed;top:0;left:0;right:0;height:var(--pi-h);z-index:2147482000;
+  display:none;align-items:center;gap:10px;padding:0 12px;
+  background:var(--pi-bg2);border-bottom:1px solid var(--pi-bd);color:var(--pi-tx)}
+.pi-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;
+  border-radius:8px;border:1px solid var(--pi-bd);background:var(--pi-card);color:var(--pi-tx)}
+.pi-btn:hover{border-color:var(--pi-ac)}
+.pi-btn:focus-visible,.pi-item:focus-visible{outline:2px solid var(--pi-ac);outline-offset:2px}
+.pi-logo{display:flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.04em;font-size:.95rem;color:var(--pi-tx)}
+.pi-logo em{font-style:normal;color:var(--pi-ac);margin-left:.3em}
+.pi-spacer{flex:1}
+
+/* Botão flutuante (modo fab) */
+.pi-fab{position:fixed;z-index:2147482000;display:none;width:40px;height:40px;border-radius:50%;
+  box-shadow:0 2px 10px rgba(0,0,0,.35);background:var(--pi-bg);border:1px solid var(--pi-bd);color:var(--pi-tx);
+  align-items:center;justify-content:center;opacity:.92}
+.pi-fab[data-pos="tl"]{top:calc(8px + env(safe-area-inset-top,0px));left:8px}
+.pi-fab[data-pos="tr"]{top:calc(8px + env(safe-area-inset-top,0px));right:8px}
+.pi-fab[data-pos="bl"]{bottom:calc(var(--pi-fab-b,8px) + env(safe-area-inset-bottom,0px));left:8px}
+.pi-fab[data-pos="br"]{bottom:calc(var(--pi-fab-b,8px) + env(safe-area-inset-bottom,0px));right:8px}
+
+/* Gaveta / barra lateral */
+.pi-drawer{position:fixed;top:0;left:0;bottom:0;width:min(var(--pi-w),86vw);z-index:2147482500;
+  display:flex;flex-direction:column;background:var(--pi-bg);color:var(--pi-tx);
+  border-right:1px solid var(--pi-bd);transform:translateX(-102%);transition:transform .25s ease;visibility:hidden}
+.pi-root.pi-open .pi-drawer{transform:none;visibility:visible}
+.pi-overlay{position:fixed;inset:0;z-index:2147482400;background:rgba(0,0,0,.5);display:none}
+.pi-root.pi-open .pi-overlay{display:block}
+.pi-dhead{display:flex;align-items:center;justify-content:space-between;padding:14px 14px 12px;border-bottom:1px solid var(--pi-bd)}
+.pi-nav{flex:1;overflow-y:auto;padding:12px 10px}
+.pi-item{display:flex;align-items:center;gap:10px;padding:8px 10px;margin-bottom:2px;border-radius:8px;
+  color:var(--pi-tx2);font-weight:500;font-size:.875rem}
+.pi-item:hover{background:var(--pi-card);color:var(--pi-tx)}
+.pi-item.pi-active{background:var(--pi-soft);color:var(--pi-ac)}
+.pi-item svg{flex-shrink:0;opacity:.85}
+.pi-group{margin-top:8px;border-top:1px solid var(--pi-bd);padding-top:4px}
+.pi-group summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+  padding:9px 10px;font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--pi-mut);font-weight:600}
+.pi-group summary::-webkit-details-marker{display:none}
+.pi-group summary::after{content:"\25B8";transition:transform .2s}
+.pi-group[open] summary::after{transform:rotate(90deg)}
+.pi-dfoot{padding:10px;border-top:1px solid var(--pi-bd);display:flex;gap:8px;align-items:center}
+.pi-dfoot .pi-theme-lbl{flex:1;color:var(--pi-tx2);font-size:.8rem}
+
+/* Modo full: menu fixo à esquerda em telas largas; recua o conteúdo do site */
+@media (min-width:1100px){
+  html.pi-full body{padding-left:var(--pi-w,248px) !important}
+  html.pi-full .pi-drawer{transform:none;visibility:visible}
+  html.pi-full .pi-overlay,html.pi-full .pi-dhead .pi-btn,html.pi-full .pi-bar{display:none !important}
+}
+/* Barra aparece onde não há menu fixo */
+html.pi-mode-bar .pi-bar{display:flex}
+html.pi-mode-bar body{padding-top:var(--pi-h) !important}
+@media (max-width:1099.98px){
+  html.pi-full .pi-bar{display:flex}
+  html.pi-full body{padding-top:var(--pi-h) !important}
+}
+html.pi-mode-fab .pi-fab{display:inline-flex}
+@media print{.pi-root{display:none !important}html.pi-full body{padding:0 !important}}
+@media (prefers-reduced-motion:reduce){.pi-drawer{transition:none}}

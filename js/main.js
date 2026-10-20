@@ -45,14 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ===== Tema Claro / Escuro =====
   function getPreferredTheme() {
-    const saved = localStorage.getItem('theme');
-    if (saved) return saved;
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    if (saved === 'dark' || saved === 'light') return saved;
     return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
   }
 
   function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    try { localStorage.setItem('theme', theme); } catch (e) {}
   }
 
   // Aplicar tema inicial

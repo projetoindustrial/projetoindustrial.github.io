@@ -238,7 +238,7 @@
 /* Aviso de editais */
 .bolsas-aviso {
   background: var(--accent-soft);
-  border: 1px solid rgba(14, 165, 233, 0.35);
+  border: 1px solid color-mix(in srgb, var(--color-brand-cyan) 35%, transparent);
   border-radius: 10px;
   padding: 14px 18px;
   margin-bottom: 28px;

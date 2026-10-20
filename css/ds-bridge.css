@@ -1,0 +1,108 @@
+/* Projeto Industrial — ponte do Design System v2 (tokens com contraste corrigido, out/2026).
+   Só redefine variáveis, o botão primário, a cor do destaque do hero e o anel de foco; não altera HTML nem o styles.css.
+   Carregar DEPOIS de styles.css. Para desfazer: remover o <link> deste arquivo.
+   Tema escuro continua o padrão (sem data-theme = escuro), como no site atual.
+   Valores dos tokens copiados de Projeto_Industrial_Design_System_v2/css-corrigido/tokens.css. */
+
+/* ---- Escuro (padrão) ---- */
+:root,
+[data-theme="dark"] {
+  --color-brand-deep: #0b1520;
+  --color-brand-petroleum: #1a7a8c;
+  --color-brand-cyan: #00c4c4;
+  --color-brand-cyan-muted: #0d2a2e;
+  --color-surface-page: #0b1520;
+  --color-surface-card: #142333;
+  --color-surface-sidebar: #0f1c28;
+  --color-surface-overlay: rgba(0, 0, 0, 0.55);
+  --color-text-primary: #e8eef2;
+  --color-text-secondary: #8ba3b5;
+  --color-text-inverse: #ffffff;
+  --color-text-link: #5eb8c4;
+  --color-text-link-hover: #00c4c4;
+  --color-status-success: #2da56e;
+  --color-status-success-bg: #0f2a1c;
+  --color-status-warning: #d49a2a;
+  --color-status-warning-bg: #2a220e;
+  --color-status-danger: #e05555;
+  --color-status-danger-bg: #2a1212;
+  --color-status-info: #5eb8c4;
+  --color-status-info-bg: #0f1c28;
+  --color-border-default: #243447;
+  --color-border-strong: #5f7890;
+  --color-border-focus: #00c4c4;
+  --color-focus-ring: 0 0 0 3px rgba(0, 196, 196, 0.4);
+  /* variáveis do site -> tokens do DS */
+  --bg-primary: var(--color-surface-page);
+  --bg-secondary: var(--color-surface-sidebar);
+  --bg-card: var(--color-surface-card);
+  --bg-card-hover: color-mix(in srgb, var(--color-surface-card) 90%, var(--color-text-primary));
+  --bg-sidebar: var(--color-surface-sidebar);
+  --border: var(--color-border-default);
+  --border-light: color-mix(in srgb, var(--color-border-default) 55%, var(--color-border-strong));
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --text-muted: var(--color-text-secondary);
+  --accent: var(--color-text-link);
+  --accent-hover: var(--color-text-link-hover);
+  --accent-soft: var(--color-brand-cyan-muted);
+  --success: var(--color-status-success);
+}
+
+/* ---- Claro ---- */
+[data-theme="light"] {
+  --color-brand-deep: #08263d;
+  --color-brand-petroleum: #0e5263;
+  --color-brand-cyan: #00a6a6;
+  --color-brand-cyan-muted: #e6f7f7;
+  --color-surface-page: #f4f7fa;
+  --color-surface-card: #ffffff;
+  --color-surface-sidebar: #ffffff;
+  --color-surface-overlay: rgba(8, 38, 61, 0.45);
+  --color-text-primary: #172b3a;
+  --color-text-secondary: #526575;
+  --color-text-inverse: #ffffff;
+  --color-text-link: #0e5263;
+  --color-text-link-hover: #08263d;
+  --color-status-success: #136b49;
+  --color-status-success-bg: #e8f5f0;
+  --color-status-warning: #8a5a00;
+  --color-status-warning-bg: #fdf3e3;
+  --color-status-danger: #a82f2f;
+  --color-status-danger-bg: #fceaea;
+  --color-status-info: #0e5263;
+  --color-status-info-bg: #e8eef2;
+  --color-border-default: #d0d9e0;
+  --color-border-strong: #7d8f9e;
+  --color-border-focus: #00a6a6;
+  --color-focus-ring: 0 0 0 3px rgba(0, 166, 166, 0.35);
+  --shadow-focus: 0 0 0 3px rgba(0, 166, 166, 0.35);
+  /* variáveis do site -> tokens do DS */
+  --bg-primary: var(--color-surface-page);
+  --bg-secondary: var(--color-surface-sidebar);
+  --bg-card: var(--color-surface-card);
+  --bg-card-hover: color-mix(in srgb, var(--color-surface-card) 90%, var(--color-text-primary));
+  --bg-sidebar: var(--color-surface-sidebar);
+  --border: var(--color-border-default);
+  --border-light: color-mix(in srgb, var(--color-border-default) 55%, var(--color-border-strong));
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --text-muted: var(--color-text-secondary);
+  --accent: var(--color-text-link);
+  --accent-hover: var(--color-text-link-hover);
+  --accent-soft: var(--color-brand-cyan-muted);
+  --success: var(--color-status-success);
+}
+
+/* ---- Botão primário ----
+   DS: nunca texto branco sobre ciano. Petróleo com texto branco; no hero (sempre sobre fundo escuro)
+   e no hover do tema escuro, ciano com texto brand-deep. */
+.btn-primary { background: var(--color-brand-petroleum); color: var(--color-text-inverse); }
+.btn-primary:hover { background: var(--color-brand-deep); color: var(--color-text-inverse); }
+[data-theme="dark"] .btn-primary:hover,
+.hero .btn-primary,
+.hero .btn-primary:hover { background: var(--color-brand-cyan); color: var(--color-brand-deep); }
+.hero h1 span { color: var(--color-brand-cyan); }
+
+/* ---- Foco visível (DS) ---- */
+:focus-visible { outline: 2px solid var(--color-border-focus); outline-offset: 2px; }

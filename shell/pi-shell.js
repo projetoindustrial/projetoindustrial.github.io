@@ -52,7 +52,7 @@
 
     function build(nav) {
       var logo = '<a class="pi-logo" href="' + esc(nav.logo.href) + '">' +
-        '<svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2l12 7v14l-12 7L4 23V9z" fill="#0EA5E9"/>' +
+        '<svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2l12 7v14l-12 7L4 23V9z" fill="#00C4C4"/>' +
         '<path d="M11 22V10h6a4 4 0 0 1 0 8h-3" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
         '<span>' + esc(nav.logo.title) + '<em>' + esc(nav.logo.sub) + '</em></span></a>';
       function link(it) {

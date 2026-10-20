@@ -1,15 +1,16 @@
 /* Projeto Industrial — casca compartilhada (menu + barra). Tudo com prefixo pi-.
    Não altera o CSS do site que a carrega, exceto o recuo lateral no modo "full". */
 .pi-root{
-  --pi-bg:#0F172A;--pi-bg2:#111827;--pi-card:#1E293B;--pi-bd:#1E293B;
-  --pi-tx:#F1F5F9;--pi-tx2:#94A3B8;--pi-mut:#64748B;
-  --pi-ac:#0EA5E9;--pi-soft:rgba(14,165,233,.15);
+  /* Design System v2 (tokens com contraste corrigido, out/2026) — escuro */
+  --pi-bg:#0f1c28;--pi-bg2:#0b1520;--pi-card:#142333;--pi-bd:#243447;
+  --pi-tx:#e8eef2;--pi-tx2:#8ba3b5;--pi-mut:#8ba3b5;
+  --pi-ac:#00c4c4;--pi-soft:#0d2a2e;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   font-size:14px;line-height:1.3;
 }
 .pi-root[data-pi-scheme="light"]{
-  --pi-bg:#FFFFFF;--pi-bg2:#FFFFFF;--pi-card:#F1F5F9;--pi-bd:#E2E8F0;
-  --pi-tx:#0F172A;--pi-tx2:#475569;--pi-mut:#64748B;--pi-ac:#0284C7;--pi-soft:rgba(2,132,199,.1);
+  --pi-bg:#ffffff;--pi-bg2:#ffffff;--pi-card:#f4f7fa;--pi-bd:#d0d9e0;
+  --pi-tx:#172b3a;--pi-tx2:#526575;--pi-mut:#526575;--pi-ac:#0e5263;--pi-soft:#e6f7f7;
 }
 .pi-root *,.pi-root *::before,.pi-root *::after{box-sizing:border-box}
 .pi-root a{text-decoration:none;color:inherit}

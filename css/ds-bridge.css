@@ -31,7 +31,7 @@
   --color-border-default: #243447;
   --color-border-strong: #5f7890;
   --color-border-focus: #00c4c4;
-  --color-focus-ring: 0 0 0 3px rgba(0, 196, 196, 0.4);
+  --color-focus-ring: 0 0 0 2px #0b1520, 0 0 0 4px #00c4c4;
   /* variáveis do site -> tokens do DS */
   --bg-primary: var(--color-surface-page);
   --bg-secondary: var(--color-surface-sidebar);
@@ -53,7 +53,7 @@
 [data-theme="light"] {
   --color-brand-deep: #08263d;
   --color-brand-petroleum: #0e5263;
-  --color-brand-cyan: #00a6a6;
+  --color-brand-cyan: #009f9f;
   --color-brand-cyan-muted: #e6f7f7;
   --color-surface-page: #f4f7fa;
   --color-surface-card: #ffffff;
@@ -74,9 +74,9 @@
   --color-status-info-bg: #e8eef2;
   --color-border-default: #d0d9e0;
   --color-border-strong: #7d8f9e;
-  --color-border-focus: #00a6a6;
-  --color-focus-ring: 0 0 0 3px rgba(0, 166, 166, 0.35);
-  --shadow-focus: 0 0 0 3px rgba(0, 166, 166, 0.35);
+  --color-border-focus: #0e5263;
+  --color-focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #0e5263;
+  --shadow-focus: 0 0 0 2px #ffffff, 0 0 0 4px #0e5263;
   /* variáveis do site -> tokens do DS */
   --bg-primary: var(--color-surface-page);
   --bg-secondary: var(--color-surface-sidebar);
@@ -106,3 +106,15 @@
 
 /* ---- Foco visível (DS) ---- */
 :focus-visible { outline: 2px solid var(--color-border-focus); outline-offset: 2px; }
+
+/* ---- Atalhos por intenção: Aprender / Trabalhar / Calcular (checklist DS, Fase 2) ---- */
+.intencoes { max-width: 1200px; margin: 0 auto; padding: 32px 24px 8px; }
+.intencoes-titulo { font-size: 1.25rem; margin: 0 0 16px; color: var(--text-primary); }
+.intencoes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.intencao { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 20px; }
+.intencao h3 { margin: 0 0 6px; font-size: 1.1rem; color: var(--text-primary); }
+.intencao p { margin: 0 0 12px; font-size: .9rem; color: var(--text-secondary); }
+.intencao ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.intencao a { display: flex; align-items: center; min-height: 44px; color: var(--color-text-link); text-decoration: none; font-weight: 600; }
+.intencao a:hover { color: var(--color-text-link-hover); text-decoration: underline; }
+@media (max-width: 768px) { .intencoes-grid { grid-template-columns: 1fr; } .intencoes { padding: 24px 16px 8px; } }

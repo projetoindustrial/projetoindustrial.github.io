@@ -82,3 +82,9 @@ html.pi-mode-bar body{padding-top:var(--pi-h) !important}
 html.pi-mode-fab .pi-fab{display:inline-flex}
 @media print{.pi-root{display:none !important}html.pi-full body{padding:0 !important}}
 @media (prefers-reduced-motion:reduce){.pi-drawer{transition:none}}
+
+/* Busca no menu (checklist DS, Fase 1) */
+.pi-search{padding:8px 12px 0}
+.pi-search-in{width:100%;min-height:44px;padding:0 12px;border-radius:8px;border:1px solid var(--pi-bd);background:var(--pi-card);color:var(--pi-tx);font:inherit;font-size:16px}
+.pi-search-in::placeholder{color:var(--pi-mut)}
+.pi-search-in:focus-visible{outline:2px solid var(--pi-ac);outline-offset:2px}

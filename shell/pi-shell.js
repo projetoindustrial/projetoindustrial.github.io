@@ -80,6 +80,7 @@
         '<div class="pi-overlay" data-pi="close"></div>' +
         '<aside class="pi-drawer" aria-label="Menu do Projeto Industrial">' +
           '<div class="pi-dhead">' + logo + '<button class="pi-btn" type="button" data-pi="close" aria-label="Fechar menu">' + closeIcon + '</button></div>' +
+          '<div class="pi-search"><input class="pi-search-in" type="search" placeholder="Buscar no menu" aria-label="Buscar no menu" autocomplete="off"></div>' +
           '<nav class="pi-nav">' + items + groups + '</nav>' +
           (themeBtn ? '<div class="pi-dfoot"><span class="pi-theme-lbl">Tema claro/escuro</span><button class="pi-btn" type="button" data-pi="theme" aria-label="Alternar tema claro/escuro">' + themeIcon + '</button></div>' : '') +
         '</aside>';
@@ -110,6 +111,18 @@
           html.setAttribute('data-theme', next);
           try { localStorage.setItem('theme', next); } catch (x) {}
           applyScheme();
+        }
+      });
+      var sIn = root.querySelector('.pi-search-in');
+      if (sIn) sIn.addEventListener('input', function () {
+        var q = sIn.value.trim().toLowerCase();
+        var links = root.querySelectorAll('.pi-nav .pi-item');
+        for (var i = 0; i < links.length; i++) links[i].style.display = (!q || links[i].textContent.toLowerCase().indexOf(q) > -1) ? '' : 'none';
+        var gs = root.querySelectorAll('.pi-nav .pi-group');
+        for (var g = 0; g < gs.length; g++) {
+          var any = gs[g].querySelector('.pi-item:not([style*="none"])');
+          gs[g].style.display = any ? '' : 'none';
+          if (q && any) gs[g].setAttribute('open', '');
         }
       });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && root.classList.contains('pi-open')) setOpen(false); });

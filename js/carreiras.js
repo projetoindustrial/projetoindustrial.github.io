@@ -13,6 +13,14 @@
       const data = await res.json();
       const recursos = data.recursos || [];
 
+      const catVersao = document.getElementById('catVersao');
+      const catData = document.getElementById('catData');
+      if (catVersao && data.meta?.versao) catVersao.textContent = data.meta.versao;
+      if (catData && /^\d{4}-\d{2}-\d{2}$/.test(data.meta?.data_atualizacao || '')) {
+        const [y, m, d] = data.meta.data_atualizacao.split('-');
+        catData.textContent = d + '/' + m + '/' + y;
+      }
+
       // Portais de carreira e empresas de recrutamento
       allPortais = recursos.filter(r => {
         const text = (
@@ -40,7 +48,7 @@
     } catch (err) {
       console.error(err);
       if (portaisGrid) {
-        portaisGrid.innerHTML = `<div class="empty-state"><p>Erro ao carregar dados. Verifique o arquivo JSON.</p></div>`;
+        portaisGrid.innerHTML = `<div class="empty-state"><p>Não foi possível carregar os dados agora. Atualize a página em alguns minutos.</p></div>`;
       }
     }
   }

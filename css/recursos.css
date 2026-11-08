@@ -342,3 +342,18 @@ a.tema-chip {
   display: inline-flex;
   align-items: center;
 }
+
+/* Correção mobile (nov/2026): o select com opção longa alargava o filtro além de 390 px. Remover este bloco desfaz. */
+.filter-group{min-width:0}
+.filter-group select{max-width:100%;width:100%}
+
+/* Nota do catálogo e bloco "Comece por aqui" (rodada 2d) */
+.catalogo-nota { margin: 8px 0 0; font-size: 0.8rem; color: var(--text-secondary); max-width: 62ch; }
+.comece { margin-bottom: 20px; }
+.comece h2 { font-size: 1rem; margin: 0 0 10px; }
+.comece-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+@media (min-width: 768px) { .comece-grid { grid-template-columns: repeat(3, 1fr); } }
+.comece-card { display: flex; flex-direction: column; gap: 4px; min-width: 0; padding: 14px 16px; border: 1px solid var(--border-light); border-radius: 12px; background: var(--bg-card); color: inherit; text-decoration: none; }
+.comece-card:hover { border-color: var(--accent); }
+.comece-card strong { color: var(--accent); font-size: 0.95rem; }
+.comece-card span { font-size: 0.8rem; color: var(--text-secondary); overflow-wrap: anywhere; }

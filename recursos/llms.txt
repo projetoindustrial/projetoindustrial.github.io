@@ -1,0 +1,22 @@
+# Recursos O&G Offshore
+
+> 350 recursos de petróleo e gás offshore (grupos, canais, portais de carreira, dados e normas). Maiores plataformas: LinkedIn 118, ANP 25, WhatsApp 24, Web 22, Facebook 17, Instagram 10.
+
+## Páginas
+- [Índice](https://projetoindustrial.github.io/recursos/)
+- [Vagas & Comunidades](https://projetoindustrial.github.io/recursos/tema-vagas-comunidades.html)
+- [Manutenção & PCM](https://projetoindustrial.github.io/recursos/tema-manutencao-pcm.html)
+- [HSE & Segurança](https://projetoindustrial.github.io/recursos/tema-hse-seguranca.html)
+- [Dados & Regulação](https://projetoindustrial.github.io/recursos/tema-dados-regulacao.html)
+- [Empresas & Carreiras](https://projetoindustrial.github.io/recursos/tema-empresas-carreiras.html)
+- [Normas & Certificação](https://projetoindustrial.github.io/recursos/tema-normas-certificacao.html)
+- [Subsea & Integridade](https://projetoindustrial.github.io/recursos/tema-subsea-integridade.html)
+- [Portos & Logística](https://projetoindustrial.github.io/recursos/tema-portos-logistica.html)
+- [Petroquímica](https://projetoindustrial.github.io/recursos/tema-petroquimica.html)
+
+## Dados
+- [CSV](https://projetoindustrial.github.io/recursos/dados/recursos.csv)
+- [JSONL](https://projetoindustrial.github.io/recursos/dados/recursos.jsonl)
+
+## Aviso
+Catálogo curado (v17, atualizado em 2026-10-18). Grupos e canais mudam com frequência: confirme o link antes de contar com ele.

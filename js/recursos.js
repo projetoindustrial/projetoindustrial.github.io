@@ -30,6 +30,14 @@
 
       if (totalCount) totalCount.textContent = data.meta?.total || allRecursos.length;
 
+      const catVersao = document.getElementById('catVersao');
+      const catData = document.getElementById('catData');
+      if (catVersao && data.meta?.versao) catVersao.textContent = data.meta.versao;
+      if (catData && /^\d{4}-\d{2}-\d{2}$/.test(data.meta?.data_atualizacao || '')) {
+        const [y, m, d] = data.meta.data_atualizacao.split('-');
+        catData.textContent = d + '/' + m + '/' + y;
+      }
+
       populateFilters(data.filtros || {});
       applyFilters();
     } catch (err) {
@@ -37,7 +45,7 @@
       grid.innerHTML = `
         <div class="empty-state">
           <h3>Erro ao carregar recursos</h3>
-          <p>Verifique se o arquivo <code>data/recursos-og-offshore.json</code> está presente.</p>
+          <p>Não foi possível carregar os dados agora. Atualize a página em alguns minutos.</p>
         </div>`;
     }
   }

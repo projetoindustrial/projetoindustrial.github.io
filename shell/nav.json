@@ -71,6 +71,12 @@
    "label": "Planta Virtual",
    "href": "/planta-virtual-site/",
    "icon": "<circle cx=\"6\" cy=\"6\" r=\"3\"/><circle cx=\"18\" cy=\"6\" r=\"3\"/><circle cx=\"12\" cy=\"18\" r=\"3\"/><path d=\"M8.5 7.5l2 8M15.5 7.5l-2 8M9 6h6\"/>"
+  },
+  {
+   "id": "id-polimero",
+   "label": "ID Polímero",
+   "href": "/id-polimero/",
+   "icon": "<path d=\"M9 3h6M10 3v6L4 19a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-6-10V3\"/>"
   }
  ],
  "groups": [

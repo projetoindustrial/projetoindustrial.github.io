@@ -771,3 +771,11 @@ img {
 .hero .btn-primary{color:#fff}
 @media(max-width:768px){.hero{padding:32px 22px}.hero-slides::after{background:linear-gradient(180deg,rgba(6,10,20,.88) 0%,rgba(6,10,20,.6) 100%)}}
 @media(prefers-reduced-motion:reduce){.hero-slides span{animation:none}.hero-slides span:nth-child(1){opacity:1}}
+
+/* Correção mobile (nov/2026): item flex não encolhia abaixo da largura do conteúdo e cortava Recursos/Carreiras em 390 px. Remover este bloco desfaz. */
+.main-wrapper{min-width:0;max-width:100%}
+.main-wrapper>*{min-width:0;max-width:100%}
+.tematicas-bar{max-width:100%}
+/* Correção mobile (nov/2026, Home 360 px): o campo de busca do cabeçalho tinha largura mínima própria e empurrava a página 30 px (70 px em 320 px). */
+.search-bar{min-width:0}
+.search-bar input{min-width:0;width:100%}

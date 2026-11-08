@@ -1,0 +1,20 @@
+# Projeto Industrial
+
+> Portal em português com ferramentas e catálogos para formação e trabalho na indústria (petroquímica, óleo e gás, processos, manutenção). Cada site tem versão em texto simples, legível sem JavaScript.
+
+## Sites
+- [Recursos O&G em texto](https://projetoindustrial.github.io/recursos/): 350 grupos, canais, portais e dados
+- [Painel de Vagas](https://projetoindustrial.github.io/vagas/llms.txt): vagas e empresas do setor
+- [Catálogo UMI](https://projetoindustrial.github.io/umi/llms.txt): ferramentas, bases de dados e normas
+- [Manutenção](https://projetoindustrial.github.io/manutencao/llms.txt): fontes de dado de manutenção preditiva
+- [Fontes de dados industriais](https://projetoindustrial.github.io/fontes-industriais/llms.txt): fontes abertas por tema
+- [Portal Rede Federal](https://projetoindustrial.github.io/portal-rede-federal/llms.txt): instituições e cursos da Rede Federal EPCT
+- [Catálogo de cursos gratuitos](https://projetoindustrial.github.io/catalogo-cursos-gratuitos/llms.txt): 13 mil cursos gratuitos em 62 trilhas
+- [IndústriaEDU](https://projetoindustrial.github.io/industriaedu/llms.txt): trilhas, perfis CNCT e empresas
+- [Caderno de cálculo](https://projetoindustrial.github.io/caderno/llms.txt): 61 módulos de processo e hidráulica
+- [Editor de fluxograma](https://projetoindustrial.github.io/editor-fluxograma/llms.txt): editor de fluxogramas de processo
+- [Planta virtual](https://projetoindustrial.github.io/planta-virtual-site/llms.txt): planta petroquímica simulada
+- [ID Polímero](https://projetoindustrial.github.io/id-polimero/llms.txt): identificação de polímeros por FT-IR
+
+## Mapa
+- [sitemap.xml](https://projetoindustrial.github.io/sitemap.xml)

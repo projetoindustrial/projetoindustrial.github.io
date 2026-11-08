@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://projetoindustrial.github.io/sitemap.xml

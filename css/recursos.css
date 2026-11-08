@@ -357,3 +357,6 @@ a.tema-chip {
 .comece-card:hover { border-color: var(--accent); }
 .comece-card strong { color: var(--accent); font-size: 0.95rem; }
 .comece-card span { font-size: 0.8rem; color: var(--text-secondary); overflow-wrap: anywhere; }
+
+/* O atributo hidden perdia para display:flex e o aviso "Nenhum recurso encontrado" aparecia junto dos resultados (rodada 2d) */
+.empty-state[hidden] { display: none; }

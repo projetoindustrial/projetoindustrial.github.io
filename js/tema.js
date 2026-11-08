@@ -76,7 +76,7 @@
     } catch (err) {
       console.error(err);
       if (grid) {
-        grid.innerHTML = `<div class="empty-state"><h3>Erro ao carregar recursos</h3><p>Verifique o arquivo data/recursos-og-offshore.json</p></div>`;
+        grid.innerHTML = `<div class="empty-state"><h3>Erro ao carregar recursos</h3><p>Não foi possível carregar os dados agora. Atualize a página em alguns minutos.</p></div>`;
       }
     }
   }

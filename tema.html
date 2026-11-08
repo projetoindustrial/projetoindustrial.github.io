@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Recursos temáticos do catálogo O&G Offshore — Projeto Industrial.">
-  <title>Tema — Projeto Industrial</title>
+  <meta name="description" content="Escolha um tema do catálogo de Recursos O&amp;G Offshore: vagas e comunidades, manutenção e PCM, HSE, dados e regulação, normas, subsea, portos e petroquímica.">
+  <title>Temas de Recursos O&amp;G | Projeto Industrial</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/recursos.css">
+  <noscript><style>#recursosGrid .loading-state,#emptyState{display:none}</style></noscript>
   <link rel="stylesheet" href="css/ds-bridge.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +15,8 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#08263d">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Recursos por tema — Projeto Industrial">
-  <meta property="og:description" content="Recursos temáticos do catálogo O&G Offshore.">
+  <meta property="og:title" content="Temas de Recursos O&amp;G | Projeto Industrial">
+  <meta property="og:description" content="Escolha um tema do catálogo de Recursos O&amp;G Offshore: vagas e comunidades, manutenção e PCM, HSE, dados e regulação, normas, subsea, portos e petroquímica.">
   <meta property="og:image" content="https://projetoindustrial.github.io/og.png">
   <meta property="og:url" content="https://projetoindustrial.github.io/tema.html">
   <meta name="twitter:card" content="summary_large_image">
@@ -40,6 +41,7 @@
 <a href="fontes-industriais/" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Fontes de dados</a>
 <a href="umi/" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Catálogo UMI</a>
 <a href="planta-virtual-site/" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M8.5 7.5l2 8M15.5 7.5l-2 8M9 6h6"/></svg>Planta Virtual</a>
+<a href="id-polimero/" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4 19a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-6-10V3"/></svg>ID Polímero</a>
 <details class="nav-group" open><summary>Óleo & Gás Offshore</summary>
 <a href="recursos.html" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Recursos O&G</a>
 <a href="carreiras.html" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Carreiras & Bolsas</a>
@@ -85,8 +87,8 @@
       <div class="page-header">
         <div>
           <p class="page-breadcrumb"><a href="recursos.html">Recursos O&G</a> / <span id="temaCrumb">Tema</span></p>
-          <h1 id="temaTitulo">Carregando…</h1>
-          <p class="page-subtitle" id="temaSubtitulo"></p>
+          <h1 id="temaTitulo">Temas de Recursos O&amp;G</h1>
+          <p class="page-subtitle" id="temaSubtitulo">Cada tema reúne os recursos do catálogo por assunto.</p>
         </div>
         <div class="page-actions">
           <a href="recursos.html" class="btn btn-secondary">Ver todos os recursos</a>
@@ -96,11 +98,11 @@
 
       <div class="filters-row">
         <div class="filter-group filter-results">
-          <span id="resultsCount">Carregando...</span>
+          <span id="resultsCount">Escolha um tema</span>
         </div>
       </div>
 
-      <div class="recursos-grid" id="recursosGrid">
+      <div class="recursos-grid" id="recursosGrid"><div id="estatico"><h2>Temas em texto</h2><ul><li><a href="recursos/tema-vagas-comunidades.html">Vagas &amp; Comunidades</a></li><li><a href="recursos/tema-manutencao-pcm.html">Manutenção &amp; PCM</a></li><li><a href="recursos/tema-hse-seguranca.html">HSE &amp; Segurança</a></li><li><a href="recursos/tema-dados-regulacao.html">Dados &amp; Regulação</a></li><li><a href="recursos/tema-empresas-carreiras.html">Empresas &amp; Carreiras</a></li><li><a href="recursos/tema-normas-certificacao.html">Normas &amp; Certificação</a></li><li><a href="recursos/tema-subsea-integridade.html">Subsea &amp; Integridade</a></li><li><a href="recursos/tema-portos-logistica.html">Portos &amp; Logística</a></li><li><a href="recursos/tema-petroquimica.html">Petroquímica</a></li></ul></div>
         <div class="loading-state">
           <div class="spinner"></div>
           <p>Carregando recursos...</p>

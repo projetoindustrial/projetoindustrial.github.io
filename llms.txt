@@ -5,7 +5,7 @@
 ## Sites
 - [Recursos O&G em texto](https://projetoindustrial.github.io/recursos/): 350 grupos, canais, portais e dados
 - [Painel de Vagas](https://projetoindustrial.github.io/vagas/llms.txt): vagas e empresas do setor
-- [Catálogo UMI](https://projetoindustrial.github.io/umi/llms.txt): ferramentas, bases de dados e normas
+- [Bancada Industrial](https://projetoindustrial.github.io/umi/llms.txt): ferramentas, bases de dados e normas
 - [Manutenção](https://projetoindustrial.github.io/manutencao/llms.txt): fontes de dado de manutenção preditiva
 - [Fontes de dados industriais](https://projetoindustrial.github.io/fontes-industriais/llms.txt): fontes abertas por tema
 - [Portal Rede Federal](https://projetoindustrial.github.io/portal-rede-federal/llms.txt): instituições e cursos da Rede Federal EPCT

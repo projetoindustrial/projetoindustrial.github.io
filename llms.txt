@@ -9,7 +9,7 @@
 - [Manutenção](https://projetoindustrial.github.io/manutencao/llms.txt): fontes de dado de manutenção preditiva
 - [Fontes de dados industriais](https://projetoindustrial.github.io/fontes-industriais/llms.txt): fontes abertas por tema
 - [Portal Rede Federal](https://projetoindustrial.github.io/portal-rede-federal/llms.txt): instituições e cursos da Rede Federal EPCT
-- [Catálogo de cursos gratuitos](https://projetoindustrial.github.io/catalogo-cursos-gratuitos/llms.txt): 13 mil cursos gratuitos em 62 trilhas
+- [Catálogo de cursos gratuitos](https://projetoindustrial.github.io/catalogo-cursos-gratuitos/llms.txt): mais de 13 mil cursos gratuitos em 62 trilhas
 - [IndústriaEDU](https://projetoindustrial.github.io/industriaedu/llms.txt): trilhas, perfis CNCT e empresas
 - [Caderno de cálculo](https://projetoindustrial.github.io/caderno/llms.txt): 61 módulos de processo e hidráulica
 - [Editor de fluxograma](https://projetoindustrial.github.io/editor-fluxograma/llms.txt): editor de fluxogramas de processo

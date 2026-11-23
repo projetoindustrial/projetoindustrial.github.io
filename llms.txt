@@ -15,6 +15,9 @@
 - [Editor de fluxograma](https://projetoindustrial.github.io/editor-fluxograma/llms.txt): editor de fluxogramas de processo
 - [Planta virtual](https://projetoindustrial.github.io/planta-virtual-site/llms.txt): planta petroquímica simulada
 - [ID Polímero](https://projetoindustrial.github.io/id-polimero/llms.txt): identificação de polímeros por FT-IR
+- [Bancada de rolamentos](https://projetoindustrial.github.io/bancada-rolamentos/llms.txt): simulador didático de rolamentos com som, vibração e diagnóstico assistido (dados sintéticos)
+- [Playbooks de ativo](https://projetoindustrial.github.io/playbooks-de-ativo/llms.txt): guia de consulta por equipamento: falhas típicas, diagnóstico, dados abertos e lacunas
+- [Eventos industriais](https://projetoindustrial.github.io/eventos-industriais/llms.txt): agenda e fontes de palestras, webinars e eventos de formação técnica
 
 ## Mapa
 - [sitemap.xml](https://projetoindustrial.github.io/sitemap.xml)

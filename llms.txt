@@ -19,5 +19,11 @@
 - [Playbooks de ativo](https://projetoindustrial.github.io/playbooks-de-ativo/llms.txt): guia de consulta por equipamento: falhas típicas, diagnóstico, dados abertos e lacunas
 - [Eventos industriais](https://projetoindustrial.github.io/eventos-industriais/llms.txt): agenda e fontes de palestras, webinars e eventos de formação técnica
 
+## Catálogo comum (dados)
+- [catalog.json](https://projetoindustrial.github.io/catalog.json): 15 blocos e 13 datasets, com contagens, status e data de verificação (null = desconhecido)
+- [items.jsonl](https://projetoindustrial.github.io/items.jsonl): itens com licença e nível de verificação (Manutenção, Fontes, Bancada, Recursos O&G, Playbooks)
+- [catalog.schema.json](https://projetoindustrial.github.io/catalog.schema.json): schema v1.2
+Gerado em 2026-11-26 a partir dos CSV/JSONL públicos; `last_verified` é a data da fonte, não a da geração. Confirme na fonte antes de citar.
+
 ## Mapa
 - [sitemap.xml](https://projetoindustrial.github.io/sitemap.xml)

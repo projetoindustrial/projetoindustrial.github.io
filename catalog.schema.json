@@ -1,0 +1,784 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://projetoindustrial.github.io/catalog.schema.json",
+ "title": "Projeto Industrial — catalog.json (v1.2)",
+ "description": "catalog.json valida na raiz; cada linha de items.jsonl valida contra #/$defs/item. v1.2: corrige chave 'properties' duplicada da v1.1; last_verified/retrieved_at/counts.total/url de item passam a aceitar null (desconhecido ≠ inventado); acrescenta license_label e source_id.",
+ "type": "object",
+ "required": [
+  "schema_version",
+  "generated_at",
+  "blocks",
+  "datasets"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": "1.2"
+  },
+  "generated_at": {
+   "type": "string"
+  },
+  "blocks": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "$ref": "#/$defs/block"
+   }
+  },
+  "datasets": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/dataset"
+   }
+  }
+ },
+ "additionalProperties": false,
+ "$defs": {
+  "isoDate": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "url": {
+   "type": "string",
+   "pattern": "^https?://\\S+$"
+  },
+  "blockId": {
+   "type": "string",
+   "pattern": "^[a-z][a-z0-9-]{1,40}$"
+  },
+  "datasetId": {
+   "type": "string",
+   "pattern": "^ds-[a-z0-9-]+$"
+  },
+  "itemId": {
+   "type": "string",
+   "pattern": "^[a-z][a-z0-9-]+-\\d{4,}$"
+  },
+  "licenseEnum": {
+   "enum": [
+    "cc0",
+    "cc-by-4.0",
+    "cc-by-sa-4.0",
+    "mit",
+    "apache-2.0",
+    "public-domain",
+    "open-unknown",
+    "open-unstated",
+    "restricted",
+    "blocked",
+    "proprietary",
+    "mixed",
+    "unknown",
+    "not-applicable"
+   ]
+  },
+  "openLicense": {
+   "enum": [
+    "cc0",
+    "cc-by-4.0",
+    "cc-by-sa-4.0",
+    "mit",
+    "apache-2.0",
+    "public-domain"
+   ]
+  },
+  "verificationLevel": {
+   "enum": [
+    "verified_double",
+    "verified_single",
+    "ambiguous",
+    "restricted",
+    "blocked",
+    "unavailable",
+    "unverified_heuristic"
+   ]
+  },
+  "licenseStatus": {
+   "enum": [
+    "verified",
+    "unstated",
+    "restricted",
+    "blocked",
+    "unknown"
+   ]
+  },
+  "blockStatus": {
+   "enum": [
+    "active",
+    "degraded",
+    "offline",
+    "experimental",
+    "deprecated"
+   ]
+  },
+  "kind": {
+   "enum": [
+    "course",
+    "job",
+    "resource",
+    "tool",
+    "spectrum",
+    "norm",
+    "event",
+    "module",
+    "equipment",
+    "institution",
+    "playbook"
+   ]
+  },
+  "dataKind": {
+   "enum": [
+    "current",
+    "historical",
+    "mixed"
+   ]
+  },
+  "counts": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "total"
+   ],
+   "properties": {
+    "total": {
+     "oneOf": [
+      {
+       "type": "integer",
+       "minimum": 0
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "verified": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "heuristic": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "historical": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "by_unit": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "integer",
+      "minimum": 0
+     }
+    },
+    "by_verification": {
+     "type": "object",
+     "additionalProperties": false,
+     "properties": {
+      "verified_double": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "verified_single": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "ambiguous": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "restricted": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "blocked": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "unavailable": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "unverified_heuristic": {
+       "type": "integer",
+       "minimum": 0
+      }
+     }
+    }
+   }
+  },
+  "block": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "id",
+    "name",
+    "url",
+    "fallback_url",
+    "purpose",
+    "status",
+    "pwa",
+    "last_verified",
+    "valid_until",
+    "counts"
+   ],
+   "properties": {
+    "id": {
+     "$ref": "#/$defs/blockId"
+    },
+    "name": {
+     "type": "string",
+     "minLength": 1,
+     "maxLength": 80
+    },
+    "aliases": {
+     "type": "array",
+     "uniqueItems": true,
+     "items": {
+      "type": "string",
+      "minLength": 1
+     }
+    },
+    "url": {
+     "$ref": "#/$defs/url"
+    },
+    "fallback_url": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/url"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "items_url": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/url"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "purpose": {
+     "type": "string",
+     "minLength": 1,
+     "maxLength": 140
+    },
+    "not_for": {
+     "oneOf": [
+      {
+       "type": "string",
+       "maxLength": 200
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "status": {
+     "$ref": "#/$defs/blockStatus"
+    },
+    "pwa": {
+     "type": "boolean"
+    },
+    "last_verified": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/isoDate"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "valid_until": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/isoDate"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "data_version": {
+     "oneOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "counts": {
+     "$ref": "#/$defs/counts"
+    },
+    "datasets": {
+     "type": "array",
+     "uniqueItems": true,
+     "items": {
+      "$ref": "#/$defs/datasetId"
+     }
+    },
+    "shares_dataset_with": {
+     "type": "array",
+     "uniqueItems": true,
+     "items": {
+      "$ref": "#/$defs/blockId"
+     }
+    },
+    "layers": {
+     "type": "array",
+     "uniqueItems": true,
+     "items": {
+      "enum": [
+       "curated",
+       "heuristic"
+      ]
+     }
+    }
+   }
+  },
+  "dataset": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "id",
+    "name",
+    "publisher",
+    "url",
+    "license",
+    "retrieved_at"
+   ],
+   "properties": {
+    "id": {
+     "$ref": "#/$defs/datasetId"
+    },
+    "name": {
+     "type": "string",
+     "minLength": 1
+    },
+    "publisher": {
+     "type": "string",
+     "minLength": 1
+    },
+    "url": {
+     "$ref": "#/$defs/url"
+    },
+    "license": {
+     "$ref": "#/$defs/licenseEnum"
+    },
+    "license_url": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/url"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "retrieved_at": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/isoDate"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "methodology": {
+     "oneOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "notes": {
+     "oneOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   }
+  },
+  "item": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "id",
+    "block",
+    "dataset_id",
+    "kind",
+    "title",
+    "url",
+    "source_url",
+    "last_verified",
+    "verification_level",
+    "license",
+    "license_status",
+    "data_kind",
+    "valid_until"
+   ],
+   "properties": {
+    "id": {
+     "$ref": "#/$defs/itemId"
+    },
+    "block": {
+     "$ref": "#/$defs/blockId"
+    },
+    "dataset_id": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/datasetId"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "kind": {
+     "$ref": "#/$defs/kind"
+    },
+    "title": {
+     "type": "string",
+     "minLength": 1
+    },
+    "url": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/url"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "source_url": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/url"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "source_name": {
+     "oneOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "source_id": {
+     "type": "string"
+    },
+    "last_verified": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/isoDate"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "verification_level": {
+     "$ref": "#/$defs/verificationLevel"
+    },
+    "license": {
+     "$ref": "#/$defs/licenseEnum"
+    },
+    "license_status": {
+     "$ref": "#/$defs/licenseStatus"
+    },
+    "license_url": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/url"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "license_label": {
+     "type": "string",
+     "maxLength": 240
+    },
+    "licenses": {
+     "type": "array",
+     "minItems": 2,
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "license"
+      ],
+      "properties": {
+       "license": {
+        "$ref": "#/$defs/licenseEnum"
+       },
+       "license_url": {
+        "oneOf": [
+         {
+          "$ref": "#/$defs/url"
+         },
+         {
+          "type": "null"
+         }
+        ]
+       },
+       "component": {
+        "enum": [
+         "code",
+         "data",
+         "library",
+         "docs"
+        ]
+       }
+      }
+     }
+    },
+    "data_kind": {
+     "$ref": "#/$defs/dataKind"
+    },
+    "region": {
+     "oneOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "tags": {
+     "type": "array",
+     "uniqueItems": true,
+     "items": {
+      "type": "string",
+      "minLength": 1
+     }
+    },
+    "valid_until": {
+     "oneOf": [
+      {
+       "$ref": "#/$defs/isoDate"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "allOf": [
+    {
+     "if": {
+      "properties": {
+       "license": {
+        "const": "mixed"
+       }
+      },
+      "required": [
+       "license"
+      ]
+     },
+     "then": {
+      "required": [
+       "licenses"
+      ]
+     },
+     "else": {
+      "not": {
+       "required": [
+        "licenses"
+       ]
+      }
+     }
+    },
+    {
+     "$comment": "verified exige licença aberta com license_url (ou mixed com todas as componentes abertas e com URL).",
+     "if": {
+      "properties": {
+       "license_status": {
+        "const": "verified"
+       }
+      },
+      "required": [
+       "license_status"
+      ]
+     },
+     "then": {
+      "anyOf": [
+       {
+        "required": [
+         "license",
+         "license_url"
+        ],
+        "properties": {
+         "license": {
+          "$ref": "#/$defs/openLicense"
+         },
+         "license_url": {
+          "$ref": "#/$defs/url"
+         }
+        }
+       },
+       {
+        "required": [
+         "license",
+         "licenses"
+        ],
+        "properties": {
+         "license": {
+          "const": "mixed"
+         },
+         "licenses": {
+          "items": {
+           "required": [
+            "license",
+            "license_url"
+           ],
+           "properties": {
+            "license": {
+             "$ref": "#/$defs/openLicense"
+            },
+            "license_url": {
+             "$ref": "#/$defs/url"
+            }
+           }
+          }
+         }
+        }
+       }
+      ]
+     }
+    },
+    {
+     "$comment": "licença aberta + URL ⇒ verified.",
+     "if": {
+      "required": [
+       "license",
+       "license_url"
+      ],
+      "properties": {
+       "license": {
+        "$ref": "#/$defs/openLicense"
+       },
+       "license_url": {
+        "$ref": "#/$defs/url"
+       }
+      }
+     },
+     "then": {
+      "properties": {
+       "license_status": {
+        "const": "verified"
+       }
+      }
+     }
+    },
+    {
+     "if": {
+      "properties": {
+       "license": {
+        "enum": [
+         "open-unknown",
+         "open-unstated"
+        ]
+       }
+      },
+      "required": [
+       "license"
+      ]
+     },
+     "then": {
+      "properties": {
+       "license_status": {
+        "const": "unstated"
+       }
+      }
+     }
+    },
+    {
+     "if": {
+      "properties": {
+       "license": {
+        "enum": [
+         "restricted",
+         "proprietary"
+        ]
+       }
+      },
+      "required": [
+       "license"
+      ]
+     },
+     "then": {
+      "properties": {
+       "license_status": {
+        "const": "restricted"
+       }
+      }
+     }
+    },
+    {
+     "if": {
+      "properties": {
+       "license": {
+        "const": "blocked"
+       }
+      },
+      "required": [
+       "license"
+      ]
+     },
+     "then": {
+      "properties": {
+       "license_status": {
+        "const": "blocked"
+       }
+      }
+     }
+    },
+    {
+     "if": {
+      "properties": {
+       "license": {
+        "enum": [
+         "unknown",
+         "not-applicable"
+        ]
+       }
+      },
+      "required": [
+       "license"
+      ]
+     },
+     "then": {
+      "properties": {
+       "license_status": {
+        "const": "unknown"
+       }
+      }
+     }
+    }
+   ]
+  }
+ }
+}

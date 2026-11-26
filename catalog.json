@@ -1,0 +1,553 @@
+{
+ "schema_version": "1.2",
+ "generated_at": "2026-11-26T00:00:00Z",
+ "blocks": [
+  {
+   "id": "recursos",
+   "name": "Recursos O&G",
+   "url": "https://projetoindustrial.github.io/recursos/",
+   "fallback_url": "https://projetoindustrial.github.io/recursos/",
+   "items_url": "https://projetoindustrial.github.io/recursos/dados/recursos.jsonl",
+   "purpose": "Grupos, canais, portais, dados e normas de petróleo e gás offshore.",
+   "status": "active",
+   "pwa": false,
+   "last_verified": "2026-10-18",
+   "valid_until": null,
+   "counts": {
+    "total": 350,
+    "by_unit": {
+     "recursos": 350
+    }
+   },
+   "datasets": [
+    "ds-recursos-v17"
+   ],
+   "layers": [
+    "curated"
+   ],
+   "aliases": [
+    "Recursos O&G em texto"
+   ]
+  },
+  {
+   "id": "vagas",
+   "name": "Painel de Vagas",
+   "url": "https://projetoindustrial.github.io/vagas/",
+   "fallback_url": "https://projetoindustrial.github.io/vagas/empresas/",
+   "items_url": "https://projetoindustrial.github.io/vagas/dados/vagas.jsonl",
+   "purpose": "Vagas e canais de candidatura de empresas de petroquímica, química e O&G.",
+   "status": "active",
+   "pwa": true,
+   "last_verified": "2026-10-14",
+   "valid_until": null,
+   "counts": {
+    "total": 4700,
+    "by_unit": {
+     "vagas": 4700,
+     "empresas_monitoradas": 271,
+     "empresas_com_vaga": 63,
+     "empresas_duplicata_com_pagina": 4,
+     "vagas_brasil": 1209,
+     "vagas_fora_do_brasil": 3474
+    }
+   },
+   "datasets": [
+    "ds-vagas-2026-10"
+   ],
+   "layers": [
+    "curated"
+   ]
+  },
+  {
+   "id": "umi",
+   "name": "Bancada Industrial",
+   "url": "https://projetoindustrial.github.io/umi/",
+   "fallback_url": "https://projetoindustrial.github.io/umi/catalogo/",
+   "items_url": "https://projetoindustrial.github.io/umi/dados/catalogo.jsonl",
+   "purpose": "Ferramentas, bases de dados e normas de engenharia de processos, materiais e dados industriais.",
+   "status": "active",
+   "pwa": false,
+   "last_verified": "2026-11-06",
+   "valid_until": null,
+   "counts": {
+    "total": 569,
+    "verified": 62,
+    "by_unit": {
+     "eixos": 20
+    },
+    "by_verification": {
+     "unverified_heuristic": 465,
+     "verified_single": 62,
+     "restricted": 42
+    }
+   },
+   "datasets": [
+    "ds-umi-2026-11"
+   ],
+   "layers": [
+    "curated",
+    "heuristic"
+   ],
+   "aliases": [
+    "UMI"
+   ]
+  },
+  {
+   "id": "manutencao",
+   "name": "Manutenção",
+   "url": "https://projetoindustrial.github.io/manutencao/",
+   "fallback_url": "https://projetoindustrial.github.io/manutencao/frentes/",
+   "items_url": "https://projetoindustrial.github.io/manutencao/dados/catalogo.jsonl",
+   "purpose": "Fontes de dado para manutenção preditiva, com verificação graduada e risco legal.",
+   "status": "active",
+   "pwa": false,
+   "last_verified": "2026-10-18",
+   "valid_until": null,
+   "counts": {
+    "total": 157,
+    "by_unit": {
+     "frentes": 8
+    },
+    "by_verification": {
+     "verified_double": 89,
+     "verified_single": 35,
+     "restricted": 17,
+     "ambiguous": 14,
+     "blocked": 1,
+     "unavailable": 1
+    }
+   },
+   "datasets": [
+    "ds-manutencao-2026-10"
+   ],
+   "layers": [
+    "curated"
+   ]
+  },
+  {
+   "id": "fontes-industriais",
+   "name": "Fontes de dados industriais",
+   "url": "https://projetoindustrial.github.io/fontes-industriais/",
+   "fallback_url": "https://projetoindustrial.github.io/fontes-industriais/temas/",
+   "items_url": "https://projetoindustrial.github.io/fontes-industriais/dados/catalogo.jsonl",
+   "purpose": "Fontes abertas de dados industriais por tema, com licença resumida.",
+   "status": "active",
+   "pwa": false,
+   "last_verified": null,
+   "valid_until": null,
+   "counts": {
+    "total": 446,
+    "by_unit": {
+     "temas": 14
+    }
+   },
+   "datasets": [
+    "ds-fontes-industriais"
+   ],
+   "layers": [
+    "curated"
+   ]
+  },
+  {
+   "id": "portal-rede-federal",
+   "name": "Portal Rede Federal",
+   "url": "https://projetoindustrial.github.io/portal-rede-federal/",
+   "fallback_url": "https://projetoindustrial.github.io/portal-rede-federal/instituicoes/",
+   "items_url": null,
+   "purpose": "Cursos e matrículas das instituições da Rede Federal EPCT (catálogo 2026 + censo PNP 2023).",
+   "status": "active",
+   "pwa": false,
+   "last_verified": null,
+   "valid_until": null,
+   "counts": {
+    "total": 10002,
+    "historical": 8587,
+    "by_unit": {
+     "instituicoes": 64,
+     "cursos_atuais": 1415,
+     "ofertas_censo_2023": 8587
+    }
+   },
+   "datasets": [
+    "ds-rede-federal-cursos-2026",
+    "ds-censo-pnp-2023"
+   ],
+   "layers": [
+    "curated"
+   ],
+   "shares_dataset_with": [
+    "catalogo-cursos-gratuitos"
+   ]
+  },
+  {
+   "id": "catalogo-cursos-gratuitos",
+   "name": "Catálogo de cursos gratuitos",
+   "url": "https://projetoindustrial.github.io/catalogo-cursos-gratuitos/",
+   "fallback_url": "https://projetoindustrial.github.io/catalogo-cursos-gratuitos/trilhas/",
+   "items_url": "https://projetoindustrial.github.io/catalogo-cursos-gratuitos/dados/cursos.jsonl",
+   "purpose": "Cursos gratuitos em 6 blocos e 62 trilhas (ofertas atuais + censo PNP 2023).",
+   "status": "active",
+   "pwa": false,
+   "last_verified": null,
+   "valid_until": null,
+   "counts": {
+    "total": 13395,
+    "historical": 8587,
+    "by_unit": {
+     "atuais": 4808,
+     "historico_pnp_2023": 8587,
+     "trilhas": 62,
+     "Saúde": 279,
+     "Empreendedorismo e Gestão": 448,
+     "Governo e Administração Pública": 1020,
+     "Educação Superior e Extensão": 120,
+     "Educação Profissional e Tecnológica": 9992,
+     "Treinamento Corporativo e Setorial": 1536
+    }
+   },
+   "datasets": [
+    "ds-catalogo-ofertas-2026",
+    "ds-censo-pnp-2023"
+   ],
+   "layers": [
+    "curated"
+   ],
+   "aliases": [
+    "Cursos"
+   ],
+   "shares_dataset_with": [
+    "portal-rede-federal"
+   ]
+  },
+  {
+   "id": "industriaedu",
+   "name": "IndústriaEDU",
+   "url": "https://projetoindustrial.github.io/industriaedu/",
+   "fallback_url": "https://projetoindustrial.github.io/industriaedu/texto/",
+   "items_url": null,
+   "purpose": "Trilhas de carreira, perfis técnicos CNCT, empresas e normas para a indústria brasileira.",
+   "status": "active",
+   "pwa": false,
+   "last_verified": "2026-07-22",
+   "valid_until": null,
+   "counts": {
+    "total": 1453,
+    "by_unit": {
+     "trilhas": 106,
+     "perfis_cnct": 111,
+     "empresas": 970,
+     "normas": 266
+    }
+   },
+   "datasets": [
+    "ds-industriaedu-v226"
+   ],
+   "layers": [
+    "curated"
+   ]
+  },
+  {
+   "id": "caderno",
+   "name": "Caderno",
+   "url": "https://projetoindustrial.github.io/caderno/",
+   "fallback_url": null,
+   "items_url": null,
+   "purpose": "Módulos de cálculo de processo e hidráulica, offline e didáticos.",
+   "status": "active",
+   "pwa": true,
+   "last_verified": null,
+   "valid_until": null,
+   "counts": {
+    "total": 61,
+    "by_unit": {
+     "modulos": 61
+    }
+   },
+   "datasets": [],
+   "layers": [
+    "curated"
+   ]
+  },
+  {
+   "id": "editor-fluxograma",
+   "name": "Editor de fluxograma",
+   "url": "https://projetoindustrial.github.io/editor-fluxograma/",
+   "fallback_url": null,
+   "items_url": null,
+   "purpose": "Editor visual de fluxogramas de processo (ativos, equipamentos e conexões).",
+   "status": "active",
+   "pwa": false,
+   "last_verified": null,
+   "valid_until": null,
+   "counts": {
+    "total": null
+   },
+   "datasets": [],
+   "layers": [
+    "curated"
+   ],
+   "aliases": [
+    "Fluxograma",
+    "Editor de Fluxograma — Planta Virtual"
+   ]
+  },
+  {
+   "id": "planta-virtual-site",
+   "name": "Planta Virtual",
+   "url": "https://projetoindustrial.github.io/planta-virtual-site/",
+   "fallback_url": null,
+   "items_url": null,
+   "purpose": "Planta petroquímica virtual simulada: unidades, equipamentos e cenários de falha.",
+   "status": "active",
+   "pwa": false,
+   "last_verified": null,
+   "valid_until": null,
+   "counts": {
+    "total": null
+   },
+   "datasets": [],
+   "layers": [
+    "curated"
+   ]
+  },
+  {
+   "id": "id-polimero",
+   "name": "ID Polímero",
+   "url": "https://projetoindustrial.github.io/id-polimero/",
+   "fallback_url": null,
+   "items_url": null,
+   "purpose": "Identificação de polímeros comuns por espectros FT-IR, localmente no navegador.",
+   "status": "active",
+   "pwa": false,
+   "last_verified": null,
+   "valid_until": null,
+   "counts": {
+    "total": 51,
+    "by_unit": {
+     "espectros": 51
+    }
+   },
+   "datasets": [
+    "ds-mpx-specdb",
+    "ds-fastex",
+    "ds-figshare-24593022",
+    "ds-zenodo-15969268"
+   ],
+   "layers": [
+    "curated"
+   ]
+  },
+  {
+   "id": "bancada-rolamentos",
+   "name": "Bancada de Rolamentos",
+   "url": "https://projetoindustrial.github.io/bancada-rolamentos/",
+   "fallback_url": null,
+   "items_url": null,
+   "purpose": "Simulador didático de rolamentos: som, vibração e diagnóstico assistido (dados sintéticos).",
+   "status": "experimental",
+   "pwa": true,
+   "last_verified": null,
+   "valid_until": null,
+   "counts": {
+    "total": null
+   },
+   "datasets": [],
+   "layers": [
+    "curated"
+   ]
+  },
+  {
+   "id": "playbooks-de-ativo",
+   "name": "Playbooks de Ativo",
+   "url": "https://projetoindustrial.github.io/playbooks-de-ativo/",
+   "fallback_url": null,
+   "items_url": null,
+   "purpose": "Guia por equipamento: falhas típicas, diagnóstico, dados abertos e lacunas.",
+   "status": "experimental",
+   "pwa": false,
+   "last_verified": "2026-11-22",
+   "valid_until": null,
+   "counts": {
+    "total": 31,
+    "by_unit": {
+     "playbooks": 31,
+     "Boa_cobertura_de_dados": 6,
+     "Cobertura_parcial": 14,
+     "Poucos_dados": 11
+    }
+   },
+   "datasets": [],
+   "layers": [
+    "curated"
+   ]
+  },
+  {
+   "id": "eventos-industriais",
+   "name": "Eventos Industriais",
+   "url": "https://projetoindustrial.github.io/eventos-industriais/",
+   "fallback_url": null,
+   "items_url": null,
+   "purpose": "Agenda e fontes de palestras, webinars e treinamentos para a indústria brasileira.",
+   "status": "experimental",
+   "pwa": false,
+   "last_verified": null,
+   "valid_until": null,
+   "counts": {
+    "total": 0,
+    "by_unit": {
+     "eventos": 0,
+     "fontes": 106
+    }
+   },
+   "datasets": [],
+   "layers": [
+    "curated"
+   ]
+  }
+ ],
+ "datasets": [
+  {
+   "id": "ds-recursos-v17",
+   "name": "Catálogo Recursos O&G v17",
+   "publisher": "Projeto Industrial",
+   "url": "https://projetoindustrial.github.io/recursos/",
+   "license": "unknown",
+   "license_url": null,
+   "retrieved_at": "2026-10-18",
+   "methodology": "Curadoria; links não verificados automaticamente.",
+   "notes": null
+  },
+  {
+   "id": "ds-vagas-2026-10",
+   "name": "Leitura de vagas petroquímica/química/O&G",
+   "publisher": "Projeto Industrial",
+   "url": "https://projetoindustrial.github.io/vagas/",
+   "license": "unknown",
+   "license_url": null,
+   "retrieved_at": "2026-10-14",
+   "methodology": "Leitura de páginas oficiais das empresas em 13 e 14/10/2026.",
+   "notes": "Nível e área são estimativas por palavras do título."
+  },
+  {
+   "id": "ds-manutencao-2026-10",
+   "name": "Fontes de dado para manutenção preditiva",
+   "publisher": "Projeto Industrial",
+   "url": "https://projetoindustrial.github.io/manutencao/",
+   "license": "mixed",
+   "license_url": null,
+   "retrieved_at": "2026-10-18",
+   "methodology": "Verificação graduada; risco legal classificado.",
+   "notes": "Licença por item (ver items.jsonl)."
+  },
+  {
+   "id": "ds-umi-2026-11",
+   "name": "Bancada Industrial",
+   "publisher": "Projeto Industrial",
+   "url": "https://projetoindustrial.github.io/umi/",
+   "license": "mixed",
+   "license_url": null,
+   "retrieved_at": "2026-11-06",
+   "methodology": "Triagem; 62 itens com licença verificada na fonte.",
+   "notes": "Licença por item."
+  },
+  {
+   "id": "ds-fontes-industriais",
+   "name": "Fontes de dados industriais",
+   "publisher": "Projeto Industrial",
+   "url": "https://projetoindustrial.github.io/fontes-industriais/",
+   "license": "mixed",
+   "license_url": null,
+   "retrieved_at": null,
+   "methodology": "Resumo de licença por fonte; pode estar desatualizado.",
+   "notes": null
+  },
+  {
+   "id": "ds-censo-pnp-2023",
+   "name": "Censo PNP 2023 (MEC/SETEC)",
+   "publisher": "MEC/SETEC (Plataforma Nova Plataforma Nilo Peçanha)",
+   "url": "https://projetoindustrial.github.io/portal-rede-federal/sobre-os-numeros.html",
+   "license": "unknown",
+   "license_url": null,
+   "retrieved_at": null,
+   "methodology": "8.587 linhas de oferta usadas por Catálogo e Portal Rede Federal.",
+   "notes": "URL aponta a página do projeto que descreve a fonte; URL oficial do dado a preencher pelo mantenedor."
+  },
+  {
+   "id": "ds-rede-federal-cursos-2026",
+   "name": "Catálogo de cursos dos Institutos Federais (2026)",
+   "publisher": "Projeto Industrial",
+   "url": "https://projetoindustrial.github.io/portal-rede-federal/",
+   "license": "unknown",
+   "license_url": null,
+   "retrieved_at": null,
+   "methodology": null,
+   "notes": "Pesquisado em 2026 (data exata não consta no llms.txt)."
+  },
+  {
+   "id": "ds-catalogo-ofertas-2026",
+   "name": "Ofertas atuais de cursos gratuitos",
+   "publisher": "Projeto Industrial",
+   "url": "https://projetoindustrial.github.io/catalogo-cursos-gratuitos/",
+   "license": "unknown",
+   "license_url": null,
+   "retrieved_at": null,
+   "methodology": "4.808 ofertas atuais em 6 blocos.",
+   "notes": null
+  },
+  {
+   "id": "ds-mpx-specdb",
+   "name": "MPX_specDB",
+   "publisher": "Lenz R, Fischer F, Arnold M, et al. (2023)",
+   "url": "https://doi.org/10.5281/zenodo.8314801",
+   "license": "cc-by-sa-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "retrieved_at": null,
+   "methodology": null,
+   "notes": "Registro Zenodo 10149551. Atribuição obrigatória; os autores originais não endossam o aplicativo. Fonte: página do ID Polímero."
+  },
+  {
+   "id": "ds-fastex",
+   "name": "FasTEX — fibras têxteis ATR-FTIR",
+   "publisher": "Mendeley Data",
+   "url": "https://projetoindustrial.github.io/id-polimero/",
+   "license": "cc-by-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "retrieved_at": null,
+   "methodology": null,
+   "notes": "Identificador citado na página: Mendeley Data rx3fjgz96x.3. URL aponta a página do projeto que traz o crédito."
+  },
+  {
+   "id": "ds-figshare-24593022",
+   "name": "Figshare 24593022 (espectros)",
+   "publisher": "Figshare",
+   "url": "https://doi.org/10.6084/m9.figshare.24593022",
+   "license": "cc-by-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "retrieved_at": null,
+   "methodology": null,
+   "notes": null
+  },
+  {
+   "id": "ds-zenodo-15969268",
+   "name": "Zenodo 15969268",
+   "publisher": "Papadopoulou K, Ainali NM, Mašek O, Bikiaris DN (Polymers 16(21):3080, 2024)",
+   "url": "https://doi.org/10.5281/zenodo.15969268",
+   "license": "cc-by-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "retrieved_at": null,
+   "methodology": null,
+   "notes": "URL por convenção de DOI do Zenodo, a partir do número citado na página (conferir)."
+  },
+  {
+   "id": "ds-industriaedu-v226",
+   "name": "Banco do IndústriaEDU v226",
+   "publisher": "Projeto Industrial",
+   "url": "https://projetoindustrial.github.io/industriaedu/",
+   "license": "unknown",
+   "license_url": null,
+   "retrieved_at": "2026-07-22",
+   "methodology": "Exportação v226; texto gerado em 2026-11-10.",
+   "notes": null
+  }
+ ]
+}

@@ -44,3 +44,7 @@ Substitua `data/recursos-og-offshore.json`. As páginas de tema filtram sozinhas
 - 8 páginas temáticas quase idênticas viraram `tema.html` (parâmetro `t`); as URLs antigas redirecionam.
 - Seção repetida de comunidades removida de `carreiras.html` (atalho para `tema.html?t=vagas-comunidades`).
 - Testado em jsdom: os cards de cada tema saem idênticos aos das páginas antigas.
+
+## Licença
+
+O código deste repositório está sob a licença [MIT](LICENSE). Dados, nomes, textos e marcas de terceiros citados ou reunidos aqui continuam sob as licenças e os direitos de cada fonte e não são cobertos por esta licença.

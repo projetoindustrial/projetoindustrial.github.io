@@ -6,6 +6,8 @@ on:
   pull_request:
     paths: ['catalog.json','items.jsonl','catalog.schema.json','tools/catalogo/**']
   workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * 1'   # segunda, 06:17 UTC: pega mudança nos CSV de origem (outros repositórios)
 permissions:
   contents: read
 jobs:

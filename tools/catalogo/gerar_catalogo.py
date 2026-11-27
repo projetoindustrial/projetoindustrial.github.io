@@ -5,7 +5,7 @@ import csv,json,re,collections,sys,os
 csv.field_size_limit(10**9)
 D=sys.argv[1]; HOJE="2026-11-26"; BASE="https://projetoindustrial.github.io"
 rd=lambda f:list(csv.DictReader(open(os.path.join(D,f),encoding='utf-8-sig',newline='')))
-# --- licenças: só mapeia rótulo EXATO para enum; senão open-unknown + license_label ---
+# --- licenças: só mapeia rótulo EXATO para enum; o que a fonte dá como identificado mas sem versão (ex.: "CC BY") vira 'named' (v1.3); senão open-unknown + license_label ---
 LIC={'cc0':('cc0','https://creativecommons.org/publicdomain/zero/1.0/'),
  'cc by 4.0':('cc-by-4.0','https://creativecommons.org/licenses/by/4.0/'),
  'cc by-sa 4.0':('cc-by-sa-4.0','https://creativecommons.org/licenses/by-sa/4.0/'),
@@ -17,6 +17,7 @@ def lic_exata(label):
 def status(lic,url,licenses=None):
     if lic in('cc0','cc-by-4.0','cc-by-sa-4.0','mit','apache-2.0','public-domain'): return 'verified' if url else 'unstated'
     if lic in('open-unknown','open-unstated'): return 'unstated'
+    if lic=='named': return 'named'
     if lic in('restricted','proprietary'): return 'restricted'
     if lic=='blocked': return 'blocked'
     return 'unknown'
@@ -48,7 +49,7 @@ for r in M:
 # ---- Fontes de dados ----
 for r in rd('fontes.csv'):
     k=r['k']; ex=lic_exata(r['l'])
-    if k=='c': lic,lu=ex if ex else ('open-unknown',None)
+    if k=='c': lic,lu=ex if ex else ('named',None)   # D5 (27/11/2026): licença nomeada sem versão = estado 'named'
     elif k=='g': lic,lu='open-unstated',None
     else: lic,lu='restricted',None
     add('fontes-industriais','ds-fontes-industriais','resource',r['n'],r['u'],'unverified_heuristic',lic,lu,r['l'],None)
@@ -129,7 +130,7 @@ datasets=[
  ds('ds-industriaedu-v226','Banco do IndústriaEDU v226','Projeto Industrial',f'{BASE}/industriaedu/','unknown','2026-07-22','Exportação v226; texto gerado em 2026-11-10.'),
 ]
 datasets[6]['retrieved_at']=None; datasets[6]['notes']='Pesquisado em 2026 (data exata não consta no llms.txt).'
-cat={"schema_version":"1.2","generated_at":HOJE+"T00:00:00Z","blocks":blocks,"datasets":datasets}
+cat={"schema_version":"1.3","generated_at":HOJE+"T00:00:00Z","blocks":blocks,"datasets":datasets}
 json.dump(cat,open('catalog.json','w',encoding='utf-8'),ensure_ascii=False,indent=1)
 with open('items.jsonl','w',encoding='utf-8') as f:
     for it in items: f.write(json.dumps(it,ensure_ascii=False)+'\n')

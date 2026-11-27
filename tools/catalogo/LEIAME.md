@@ -1,12 +1,12 @@
-# Catálogo comum — Projeto Industrial (schema v1.2, 2026-11-26)
+# Catálogo comum — Projeto Industrial (schema v1.3, 2026-11-27)
 
 | Arquivo | O que é |
 |---|---|
 | `catalog.json` | 15 blocos + 13 datasets (contagens conferidas contra os CSV/JSONL públicos) |
 | `items.jsonl` | 1.553 itens: Manutenção 157, Fontes 446, Bancada 569, Recursos O&G 350, Playbooks 31 |
-| `catalog.schema.json` | JSON Schema 2020-12 (corrige a chave `properties` duplicada da v1.1) |
+| `catalog.schema.json` | JSON Schema 2020-12 (v1.3: estado de licença `named`) |
 | `gerar_catalogo.py` | Regenera os dois arquivos a partir dos dados públicos |
 | `validar_catalogo.py` | Schema + unicidade, simetria de `shares_dataset_with`, somas, contagem contra a fonte |
 
-Regras: nada é inventado. Data, contagem ou URL desconhecidos ficam `null`. `license` só vira enum quando o rótulo da fonte é exato (ex.: "MIT", "CC BY 4.0"); o resto é `open-unknown` com o texto original em `license_label`. `verified` aqui significa "enum + URL canônica da licença", **não** confirmação independente na fonte.
+Regras: nada é inventado. Data, contagem ou URL desconhecidos ficam `null`. `license` só vira enum quando o rótulo da fonte é exato (ex.: "MIT", "CC BY 4.0"); o que a fonte dá como identificado mas sem versão (ex.: "CC BY", 173 itens de Fontes) é `named` (exige `license_label`; `license_status` também `named`; não conta como verificado); o resto é `open-unknown` com o texto original em `license_label`. `verified` aqui significa "enum + URL canônica da licença", **não** confirmação independente na fonte.
 Uso: `python3 gerar_catalogo.py <pasta_dados>` e `python3 validar_catalogo.py <pasta_dados>` (requer `pip install jsonschema`). O validador aceita a pasta plana de CSVs ou a pasta com os repositórios clonados (`<repo>/dados/catalogo.csv`; `recursos` em `projetoindustrial.github.io/recursos/dados/recursos.csv`).

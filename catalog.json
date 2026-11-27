@@ -94,7 +94,7 @@
   },
   {
    "id": "manutencao",
-   "name": "Manutenção",
+   "name": "Manutenção preditiva",
    "url": "https://projetoindustrial.github.io/manutencao/",
    "fallback_url": "https://projetoindustrial.github.io/manutencao/frentes/",
    "items_url": "https://projetoindustrial.github.io/manutencao/dados/catalogo.jsonl",
@@ -339,7 +339,7 @@
   },
   {
    "id": "bancada-rolamentos",
-   "name": "Bancada de Rolamentos",
+   "name": "Simulador de Rolamentos",
    "url": "https://projetoindustrial.github.io/bancada-rolamentos/",
    "fallback_url": null,
    "items_url": null,

@@ -318,7 +318,7 @@
    "items_url": null,
    "purpose": "Identificação de polímeros comuns por espectros FT-IR, localmente no navegador.",
    "status": "active",
-   "pwa": false,
+   "pwa": true,
    "last_verified": null,
    "valid_until": null,
    "counts": {

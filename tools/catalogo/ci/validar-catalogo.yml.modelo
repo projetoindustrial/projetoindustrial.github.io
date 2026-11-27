@@ -1,0 +1,21 @@
+# MODELO de workflow. Para ativar: copiar para .github/workflows/validar-catalogo.yml (pela web, ou com token que tenha o escopo "workflow").
+name: Validar catálogo comum
+on:
+  push:
+    paths: ['catalog.json','items.jsonl','catalog.schema.json','tools/catalogo/**']
+  pull_request:
+    paths: ['catalog.json','items.jsonl','catalog.schema.json','tools/catalogo/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install jsonschema
+      # Schema + ids únicos + simetria de shares_dataset_with + somas. Sem pasta de dados: não compara com os CSV de origem.
+      - run: python3 tools/catalogo/validar_catalogo.py

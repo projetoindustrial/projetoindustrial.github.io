@@ -6,7 +6,7 @@
 - [Recursos O&G em texto](https://projetoindustrial.github.io/recursos/): 350 grupos, canais, portais e dados
 - [Painel de Vagas](https://projetoindustrial.github.io/vagas/llms.txt): vagas e empresas do setor
 - [Bancada Industrial](https://projetoindustrial.github.io/umi/llms.txt): ferramentas, bases de dados e normas
-- [Manutenção](https://projetoindustrial.github.io/manutencao/llms.txt): fontes de dado de manutenção preditiva
+- [Manutenção preditiva](https://projetoindustrial.github.io/manutencao/llms.txt): fontes de dado de manutenção preditiva
 - [Fontes de dados industriais](https://projetoindustrial.github.io/fontes-industriais/llms.txt): fontes abertas por tema
 - [Portal Rede Federal](https://projetoindustrial.github.io/portal-rede-federal/llms.txt): instituições e cursos da Rede Federal EPCT
 - [Catálogo de cursos gratuitos](https://projetoindustrial.github.io/catalogo-cursos-gratuitos/llms.txt): mais de 13 mil cursos gratuitos em 62 trilhas
@@ -15,7 +15,7 @@
 - [Editor de fluxograma](https://projetoindustrial.github.io/editor-fluxograma/llms.txt): editor de fluxogramas de processo
 - [Planta virtual](https://projetoindustrial.github.io/planta-virtual-site/llms.txt): planta petroquímica simulada
 - [ID Polímero](https://projetoindustrial.github.io/id-polimero/llms.txt): identificação de polímeros por FT-IR
-- [Bancada de rolamentos](https://projetoindustrial.github.io/bancada-rolamentos/llms.txt): simulador didático de rolamentos com som, vibração e diagnóstico assistido (dados sintéticos)
+- [Simulador de rolamentos](https://projetoindustrial.github.io/bancada-rolamentos/llms.txt): simulador didático de rolamentos com som, vibração e diagnóstico assistido (dados sintéticos)
 - [Playbooks de ativo](https://projetoindustrial.github.io/playbooks-de-ativo/llms.txt): guia de consulta por equipamento: falhas típicas, diagnóstico, dados abertos e lacunas
 - [Eventos industriais](https://projetoindustrial.github.io/eventos-industriais/llms.txt): fontes de palestras, webinars e eventos de formação técnica (a agenda com datas ainda está em formação)
 

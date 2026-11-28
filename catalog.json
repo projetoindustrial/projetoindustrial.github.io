@@ -66,7 +66,7 @@
    "items_url": "https://projetoindustrial.github.io/umi/dados/catalogo.jsonl",
    "purpose": "Ferramentas, bases de dados e normas de engenharia de processos, materiais e dados industriais.",
    "status": "active",
-   "pwa": false,
+   "pwa": true,
    "last_verified": "2026-11-06",
    "valid_until": null,
    "counts": {
@@ -318,7 +318,7 @@
    "items_url": null,
    "purpose": "Identificação de polímeros comuns por espectros FT-IR, localmente no navegador.",
    "status": "active",
-   "pwa": false,
+   "pwa": true,
    "last_verified": null,
    "valid_until": null,
    "counts": {

@@ -1,0 +1,32 @@
+# MODELO de workflow. Para ativar: copiar para .github/workflows/validar-catalogo.yml (pela web, ou com token que tenha o escopo "workflow").
+name: Validar catálogo comum
+on:
+  push:
+    paths: ['catalog.json','items.jsonl','catalog.schema.json','tools/catalogo/**']
+  pull_request:
+    paths: ['catalog.json','items.jsonl','catalog.schema.json','tools/catalogo/**']
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * 1'   # segunda, 06:17 UTC: pega mudança nos CSV de origem (outros repositórios)
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install jsonschema
+      # Baixa os 4 CSV públicos de origem (nomes planos aceitos pelo validador)
+      - name: Baixar fontes
+        run: |
+          mkdir -p fontes
+          B=https://raw.githubusercontent.com/projetoindustrial
+          curl -fsSL $B/manutencao/main/dados/catalogo.csv -o fontes/manutencao.csv
+          curl -fsSL $B/fontes-industriais/main/dados/catalogo.csv -o fontes/fontes.csv
+          curl -fsSL $B/umi/main/dados/catalogo.csv -o fontes/umi.csv
+          curl -fsSL $B/projetoindustrial.github.io/main/recursos/dados/recursos.csv -o fontes/recursos.csv
+      # Schema + ids únicos + simetria de shares_dataset_with + somas + contagem contra a fonte
+      - run: python3 tools/catalogo/validar_catalogo.py fontes

@@ -3,8 +3,12 @@
 import json,sys,os,collections,csv
 from jsonschema import Draft202012Validator
 csv.field_size_limit(10**9)
-S=json.load(open('catalog.schema.json',encoding='utf-8')); C=json.load(open('catalog.json',encoding='utf-8'))
-I=[json.loads(l) for l in open('items.jsonl',encoding='utf-8')]
+# Localiza os arquivos do catálogo: diretório atual, pasta do script ou a raiz do repositório (../..)
+_AQUI=os.path.dirname(os.path.abspath(__file__))
+_RAIZ=next((d for d in (os.getcwd(),_AQUI,os.path.join(_AQUI,'..','..')) if os.path.exists(os.path.join(d,'catalog.json'))),None)
+if _RAIZ is None: sys.exit('catalog.json não encontrado (tentei o diretório atual, a pasta do script e a raiz do repositório)')
+S=json.load(open(os.path.join(_RAIZ,'catalog.schema.json'),encoding='utf-8')); C=json.load(open(os.path.join(_RAIZ,'catalog.json'),encoding='utf-8'))
+I=[json.loads(l) for l in open(os.path.join(_RAIZ,'items.jsonl'),encoding='utf-8')]
 err=0
 def bad(m):
     global err; err+=1; print('ERRO',m)

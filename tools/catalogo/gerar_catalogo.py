@@ -5,7 +5,7 @@ import csv,json,re,collections,sys,os
 csv.field_size_limit(10**9)
 D=sys.argv[1]; HOJE="2026-11-26"; BASE="https://projetoindustrial.github.io"
 rd=lambda f:list(csv.DictReader(open(os.path.join(D,f),encoding='utf-8-sig',newline='')))
-# --- licenças: só mapeia rótulo EXATO para enum; senão open-unknown + license_label ---
+# --- licenças: só mapeia rótulo EXATO para enum; o que a fonte dá como identificado mas sem versão (ex.: "CC BY") vira 'named' (v1.3); senão open-unknown + license_label ---
 LIC={'cc0':('cc0','https://creativecommons.org/publicdomain/zero/1.0/'),
  'cc by 4.0':('cc-by-4.0','https://creativecommons.org/licenses/by/4.0/'),
  'cc by-sa 4.0':('cc-by-sa-4.0','https://creativecommons.org/licenses/by-sa/4.0/'),
@@ -17,6 +17,7 @@ def lic_exata(label):
 def status(lic,url,licenses=None):
     if lic in('cc0','cc-by-4.0','cc-by-sa-4.0','mit','apache-2.0','public-domain'): return 'verified' if url else 'unstated'
     if lic in('open-unknown','open-unstated'): return 'unstated'
+    if lic=='named': return 'named'
     if lic in('restricted','proprietary'): return 'restricted'
     if lic=='blocked': return 'blocked'
     return 'unknown'
@@ -48,7 +49,7 @@ for r in M:
 # ---- Fontes de dados ----
 for r in rd('fontes.csv'):
     k=r['k']; ex=lic_exata(r['l'])
-    if k=='c': lic,lu=ex if ex else ('open-unknown',None)
+    if k=='c': lic,lu=ex if ex else ('named',None)   # D5 (27/11/2026): licença nomeada sem versão = estado 'named'
     elif k=='g': lic,lu='open-unstated',None
     else: lic,lu='restricted',None
     add('fontes-industriais','ds-fontes-industriais','resource',r['n'],r['u'],'unverified_heuristic',lic,lu,r['l'],None)
@@ -96,7 +97,7 @@ mv=bv('manutencao'); uv=bv('umi')
 blocks=[
  blk('recursos','Recursos O&G','recursos/','Grupos, canais, portais, dados e normas de petróleo e gás offshore.',{"total":350,"by_unit":{"recursos":350}},fb='recursos/',items_url='recursos/dados/recursos.jsonl',lv='2026-10-18',ds=['ds-recursos-v17'],aliases=['Recursos O&G em texto']),
  blk('vagas','Painel de Vagas','vagas/','Vagas e canais de candidatura de empresas de petroquímica, química e O&G.',{"total":len(vagas),"by_unit":{"vagas":len(vagas),"empresas_monitoradas":271,"empresas_com_vaga":emp_ids,"empresas_duplicata_com_pagina":4,"vagas_brasil":1209,"vagas_fora_do_brasil":sum(1 for v in vagas if v["pais"]=="Fora do Brasil")}},fb='vagas/empresas/',items_url='vagas/dados/vagas.jsonl',lv='2026-10-14',ds=['ds-vagas-2026-10'],pwa=True),
- blk('umi','Bancada Industrial','umi/','Ferramentas, bases de dados e normas de engenharia de processos, materiais e dados industriais.',{"total":569,"verified":62,"by_unit":{"eixos":20},"by_verification":uv},fb='umi/catalogo/',items_url='umi/dados/catalogo.jsonl',lv='2026-11-06',ds=['ds-umi-2026-11'],layers=['curated','heuristic'],aliases=['UMI']),
+ blk('umi','Bancada Industrial','umi/','Ferramentas, bases de dados e normas de engenharia de processos, materiais e dados industriais.',{"total":569,"verified":62,"by_unit":{"eixos":20},"by_verification":uv},fb='umi/catalogo/',items_url='umi/dados/catalogo.jsonl',lv='2026-11-06',ds=['ds-umi-2026-11'],layers=['curated','heuristic'],pwa=True,aliases=['UMI']),
  blk('manutencao','Manutenção preditiva','manutencao/','Fontes de dado para manutenção preditiva, com verificação graduada e risco legal.',{"total":157,"by_unit":{"frentes":8},"by_verification":mv},fb='manutencao/frentes/',items_url='manutencao/dados/catalogo.jsonl',lv='2026-10-18',ds=['ds-manutencao-2026-10']),
  blk('fontes-industriais','Fontes de dados industriais','fontes-industriais/','Fontes abertas de dados industriais por tema, com licença resumida.',{"total":446,"by_unit":{"temas":14}},fb='fontes-industriais/temas/',items_url='fontes-industriais/dados/catalogo.jsonl',ds=['ds-fontes-industriais']),
  blk('portal-rede-federal','Portal Rede Federal','portal-rede-federal/','Cursos e matrículas das instituições da Rede Federal EPCT (catálogo 2026 + censo PNP 2023).',{"total":1415+8587,"historical":8587,"by_unit":{"instituicoes":64,"cursos_atuais":1415,"ofertas_censo_2023":8587}},fb='portal-rede-federal/instituicoes/',ds=['ds-rede-federal-cursos-2026','ds-censo-pnp-2023'],shares=['catalogo-cursos-gratuitos']),
@@ -105,7 +106,7 @@ blocks=[
  blk('caderno','Caderno','caderno/','Módulos de cálculo de processo e hidráulica, offline e didáticos.',{"total":61,"by_unit":{"modulos":61}},pwa=True),
  blk('editor-fluxograma','Editor de fluxograma','editor-fluxograma/','Editor visual de fluxogramas de processo (ativos, equipamentos e conexões).',{"total":None},aliases=['Fluxograma','Editor de Fluxograma — Planta Virtual']),
  blk('planta-virtual-site','Planta Virtual','planta-virtual-site/','Planta petroquímica virtual simulada: unidades, equipamentos e cenários de falha.',{"total":None},status_='active'),
- blk('id-polimero','ID Polímero','id-polimero/','Identificação de polímeros comuns por espectros FT-IR, localmente no navegador.',{"total":51,"by_unit":{"espectros":51}},ds=['ds-mpx-specdb','ds-fastex','ds-figshare-24593022','ds-zenodo-15969268']),
+ blk('id-polimero','ID Polímero','id-polimero/','Identificação de polímeros comuns por espectros FT-IR, localmente no navegador.',{"total":51,"by_unit":{"espectros":51}},pwa=True,ds=['ds-mpx-specdb','ds-fastex','ds-figshare-24593022','ds-zenodo-15969268']),
  blk('bancada-rolamentos','Simulador de Rolamentos','bancada-rolamentos/','Simulador didático de rolamentos: som, vibração e diagnóstico assistido (dados sintéticos).',{"total":None},status_='experimental',pwa=True),
  blk('playbooks-de-ativo','Playbooks de Ativo','playbooks-de-ativo/','Guia por equipamento: falhas típicas, diagnóstico, dados abertos e lacunas.',{"total":seq['playbooks-de-ativo'],"by_unit":{"playbooks":seq['playbooks-de-ativo'],**{k.replace(' ','_'):v for k,v in cov.items()}}},lv='2026-11-22',status_='experimental',items_url=None),
  blk('eventos-industriais','Eventos Industriais','eventos-industriais/','Agenda e fontes de palestras, webinars e treinamentos para a indústria brasileira.',{"total":0,"by_unit":{"eventos":0,"fontes":106}},status_='experimental'),
@@ -129,7 +130,7 @@ datasets=[
  ds('ds-industriaedu-v226','Banco do IndústriaEDU v226','Projeto Industrial',f'{BASE}/industriaedu/','unknown','2026-07-22','Exportação v226; texto gerado em 2026-11-10.'),
 ]
 datasets[6]['retrieved_at']=None; datasets[6]['notes']='Pesquisado em 2026 (data exata não consta no llms.txt).'
-cat={"schema_version":"1.2","generated_at":HOJE+"T00:00:00Z","blocks":blocks,"datasets":datasets}
+cat={"schema_version":"1.3","generated_at":HOJE+"T00:00:00Z","blocks":blocks,"datasets":datasets}
 json.dump(cat,open('catalog.json','w',encoding='utf-8'),ensure_ascii=False,indent=1)
 with open('items.jsonl','w',encoding='utf-8') as f:
     for it in items: f.write(json.dumps(it,ensure_ascii=False)+'\n')
